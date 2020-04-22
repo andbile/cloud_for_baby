@@ -1,0 +1,18 @@
+// vendor
+@import "vendor/normalize";
+
+// base
+@import "base/module";
+
+// components
+@import "components/module";
+
+
+// pages
+@import "pages/main_header";
+@import "pages/main_footer";
+
+// index
+@import "pages/01_index/module";
+
+
