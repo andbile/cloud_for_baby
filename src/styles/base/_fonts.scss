@@ -1,9 +1,81 @@
+//CenturyGothic
+@font-face {
+  font-family: 'AvantGardeGothicCTT';
+  src: url('../fonts/AvantGardeGothicC-Bold.woff2') format('woff2'),
+    url('../fonts/AvantGardeGothicC-Bold.woff') format('woff'),
+    url('../fonts/AvantGardeGothicCTT_Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvantGardeGothicCTT';
+  src: url('../fonts/AvantGardeGothicC-Normal.woff2') format('woff2'),
+  url('../fonts/AvantGardeGothicC-Normal.woff') format('woff'),
+  url('../fonts/AvantGardeGothicCTT_Normal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../fonts/MyriadPro-Regular.woff2') format('woff2'),
+  url('../fonts/MyriadPro-Regular.woff') format('woff'),
+  url('../fonts/MyriadPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../fonts/MyriadPro-Bold.woff2') format('woff2'),
+  url('../fonts/MyriadPro-Bold.woff') format('woff'),
+  url('../fonts/MyriadPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 
 
 
 
+@font-face {
+  font-family: 'cloud_for_baby';
+  src: url('../fonts/cloud_for_baby.eot?73657740');
+  src: url('../fonts/cloud_for_baby.eot?73657740#iefix') format('embedded-opentype'),
+  url('../fonts/cloud_for_baby.woff2?73657740') format('woff2'),
+  url('../fonts/cloud_for_baby.woff?73657740') format('woff'),
+  url('../fonts/cloud_for_baby.ttf?73657740') format('truetype'),
+  url('../fonts/cloud_for_baby.svg?73657740#cloud_for_baby') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+.icon-cancel:before { content: '\e800'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-instagram:before { content: '\f16d'; } /* '' */
+.icon-vkontakte:before { content: '\f189'; } /* '' */
+.icon-odnoklassniki:before { content: '\f263'; } /* '' */
+.icon-hashtag:before { content: '\f292'; } /* '' */
+
+
+.icon:before{
+  font-family: 'cloud_for_baby';
+  font-size: 14px;
+  color: inherit;
+}
+
+.icon-instagram:before, .icon-facebook:before,
+.icon-vkontakte:before, .icon-odnoklassniki:before,
+.icon-hashtag:before{
+  font-size: 18px;
+}
+
+
+.icon-rocket:before{
+  /*font-size: 18px;*/
+}
 
 
 

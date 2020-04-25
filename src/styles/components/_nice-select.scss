@@ -1,0 +1,42 @@
+// стили вендора nice-select
+.form {
+
+  .nice-select{
+    width: 100%;
+    padding: 6px 15px;
+    height: auto;
+    float: none;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .nice-select .current{
+    color: #dedede;
+  }
+
+  .nice-select:after{
+    height: 9px;
+    width: 9px;
+    right: 10px;
+    top: 14px;
+    border-color: #dedede;
+  }
+
+  .nice-select .list{
+    width: 100%;
+  }
+
+  .nice-select .list li:hover{
+    /*background-color: #3f3f42;*/
+  }
+
+  .nice-select .option.focus,
+  .nice-select .option.selected.focus{
+    /* background-color: #3f3f42;*/
+  }
+}
+
+
+

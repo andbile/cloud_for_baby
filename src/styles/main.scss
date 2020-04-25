@@ -1,0 +1,19 @@
+// vendor
+@import "src/styles/vendor/normalize";
+
+// base
+@import "src/styles/base/module";
+
+// components
+@import "src/styles/components/module";
+@import "sprite";
+
+
+// pages
+@import "src/styles/pages/main_header";
+@import "src/styles/pages/main_footer";
+
+// index
+@import "src/styles/pages/01_index/module";
+
+

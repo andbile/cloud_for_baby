@@ -1,0 +1,43 @@
+@import "../base/variables";
+
+a{
+  text-decoration: none;
+  color: $font-color-black;
+  cursor: pointer;
+  transition: color 0.4s;
+
+  &:visited, &:active{
+    color: $font-color-black;
+  }
+
+  &:hover{
+    text-decoration: none;
+    color: $font-color-black;
+  }
+}
+
+.social-link{
+  position: relative;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+
+  border: 2px solid $bg-color-link;
+  border-radius: 4px;
+
+  font-size: 0;
+  color: $bg-color-link;
+
+  &.icon:before{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%, -50%);
+  }
+
+  &:hover{
+    border-color: $bg-color-link--hover;
+    color: $bg-color-link--hover;
+  }
+}
+

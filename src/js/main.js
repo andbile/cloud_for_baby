@@ -1,10 +1,10 @@
 "use strict";
 jQuery(document).ready(function($) {
 
- /*   @@include('responsive_img.js')
-    @@include('mask_tel.js')
-    @@include('toggleNodes.js')
-*/
+    @@include('./main_menu.js')
+    @@include('./mask_tel.js')
 
 
+    // select
+    $('select#select-question').niceSelect();
 });

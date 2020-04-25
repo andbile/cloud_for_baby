@@ -1,0 +1,46 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+ /* max-width: 1920px;*/
+  min-width: 320px;
+  margin: 0 auto;
+
+  outline: 1px solid green;
+}
+
+.container{
+  max-width: 1220px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+ /* outline: 1px solid red;*/
+}
+
+.bock_img, .bock_img-full{
+  position: relative;
+  overflow: hidden;
+}
+
+.bock_img img,
+.bock_img-full img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%, -50%);
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+
+section{
+  height: 100vh;
+ /* background-color: gray;
+  outline: 1px solid black;*/
+}

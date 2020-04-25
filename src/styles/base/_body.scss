@@ -1,0 +1,11 @@
+@import "variables";
+
+body{
+  position: relative;
+  background-color: $bg-color-primary;
+  font: $font-primary;
+  /*line-height: 1;*/
+  /*
+  background-color: $bg-color-primary;
+  color: $font-color-primary;*/
+}

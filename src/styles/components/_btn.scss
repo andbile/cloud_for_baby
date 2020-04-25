@@ -1,18 +1,32 @@
 @import "../base/variables";
 
 .btn{
- /* display: inline-block;
-  border-radius: 9px;
-  padding: 16px 23px;
+  display: inline-block;
+  padding: 7px 28px;
 
-  font-family: 'PF Highway Sans Pro', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.15em;
+  font-family: 'Myriad Pro', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
   text-transform: uppercase;
 
-  transition: all 0.4s;*/
+  border-radius: 15px;
+  box-shadow: 0 2px #188375;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn.btn-submit{
+  padding: 7px 28px;
+  border: none;
+  border-radius: 15px;
+  background-color: #1ab7a3;
+  color: #ffffff;
+
+  &:hover{
+    background-color: #169e8d;
+    border-color: #1ab7a3;
+  }
 }
 
 /*
@@ -26,10 +40,10 @@ input[type='submit'].btn{
 */
 
 
-/*
-.btn--blue{
+
+/*.btn--blue{
   color: #ffffff;
-  background-color: $font-color-blue;
+ !* background-color: $font-color-blue;*!
   width: 100%;
 
   &:hover{
@@ -39,8 +53,8 @@ input[type='submit'].btn{
   &:active, &:visited{
     background-color: #397AD0;
   }
-}
-
+}*/
+/*
 .btn--grey{
   background-color: $bg-color-border;
   color: $font-color-blue;
