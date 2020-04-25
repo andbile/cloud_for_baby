@@ -9,6 +9,7 @@ const gulp = require ('gulp'),
     //concat = require('gulp-concat'),
     cssnano = require('gulp-cssnano'),
     rename = require('gulp-rename'),
+    pngSprite = require('gulp.spritesmith'),
     //debug = require('gulp-debug'),
     //notify = require('gulp-notify');
     gulpSvgSprite = require('gulp-svg-sprite');
@@ -24,18 +25,18 @@ const path = {
     // folder where to get files
     src: {
         html: 'src/[^_]*.html',
-        style: 'src/css/scss/main.scss',
+        style: 'src/styles/main.scss',
         js: 'src/js/main.js',
-        copy_img: 'src/img/*.*',
+        copy_img: ['src/img/**/*.*', '!src/img/sprite_png/**', '!src/img/sprite_svg/**'],
         copy_font: 'src/fonts/*.*',
         copy_lib: 'src/libs/*.*',
-        copy_files: ['src/libs/*.*', 'src/fonts/*.*', 'src/img/*.*']
+        copy_files: ['src/libs/*.*', 'src/fonts/*.*', 'src/img/**/*.*', '!src/img/sprite_png/**', '!src/img/sprite_svg/**']
 
     },
     // watching files
     watch: {
         html: 'src/**/*.html',
-        style: 'src/css/scss/**/*.scss',
+        style: 'src/styles/**/*.scss',
         js: 'src/js/**/*.js',
         img:'src/img/*.*',
         fonts:'src/fonts/*.*',
@@ -137,6 +138,22 @@ function getSvgSprite() {
         .pipe(gulp.dest('src/img'))
 }
 
+function getPngSprite(callback){
+    let spriteData =
+        gulp.src('./src/img/sprite_png/*.*') // путь, откуда берем картинки для спрайта
+        .pipe(pngSprite({
+            imgName: 'sprite.png',
+            cssName: '_sprite.scss',
+            cssFormat: 'css',
+            algorithm: 'binary-tree',
+            cssTemplate: 'scss.template.mustache'
+        }));
+
+    spriteData.img.pipe(gulp.dest('./src/img/')); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('./src/styles/')); // путь, куда сохраняем стили
+
+    callback();
+}
 
 
 function browserSync(){
@@ -165,4 +182,5 @@ function watch(){
 exports.default = gulp.series('clean', gulp.parallel('html', 'styles', 'scripts', 'copyFiles'), gulp.parallel(watch, browserSync));
 
 exports.sprite = gulp.parallel(getSvgSprite);
+exports.spritePng = gulp.parallel(getPngSprite);
 
