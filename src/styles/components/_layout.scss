@@ -20,9 +20,11 @@ body{
 
  /* outline: 1px solid red;*/
 }
+.block_img{
+  text-align: center;
+}
 
-
-.bock_img img{
+.block_img img{
   display: inline-block;
   max-height: 100%;
   max-width: 100%;
@@ -30,12 +32,12 @@ body{
   vertical-align: middle;
 }
 
-.bock_img-full{
+.block_img-full{
   position: relative;
   overflow: hidden;
 }
 
-.bock_img-full img{
+.block_img-full img{
   position: absolute;
   left: 50%;
   top: 50%;

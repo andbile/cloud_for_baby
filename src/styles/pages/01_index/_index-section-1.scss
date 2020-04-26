@@ -1,0 +1,51 @@
+.index-section-1{
+  position: relative;
+  background: url("../img/bg_figures.png") $bg-color-primary no-repeat center center;
+  background-size: cover;
+}
+
+.index-section-1__bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50vh;
+  background: url("../img/clouds_01.png") no-repeat center 170%;
+}
+
+.index-section-1__wrp{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  z-index: 2;
+}
+
+.index-section-1__logo{
+  margin-top: 15.0vh;
+  margin-bottom: 14.0vh;
+  width: 319px;
+  height:29.3vh;
+  text-align: center;
+
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%); ;
+}
+
+.index-section-1__text{
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  font-size: 26px;
+  line-height: 32px;
+  text-align: center;
+  color: $bg-color--blue;
+
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%); ;
+}
+
+.index-section-1__mouse{
+  margin-top: 1.75vh;
+  height: 77px;
+  width: 45px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 100%); ;
+}

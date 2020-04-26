@@ -1,0 +1,90 @@
+.index-section-baby{
+  position: relative;
+  /*background: url("../img/bg_white_blanket.jpg") $bg-color-primary no-repeat center center;
+  background-size: contain;*/
+  background: url("../img/bg_blanket.jpg") no-repeat center center;
+  background-size: cover;
+
+  .container{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+
+.index-section-baby__bg-clouds{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50vh;
+  background: url("../img/clouds_02.png") no-repeat center bottom;
+  z-index: 5;
+}
+
+.index-section-baby__pillow-img{
+  position: absolute;
+  width: 35%;
+  height: 260px;
+  top: 0;
+  left: 80px
+}
+
+.index-section-baby__pillow-img--h1{
+  top: -190px;
+}
+
+.index-section-baby__pillow-img--h2{
+  top: 40px;
+}
+
+
+.index-section-baby__blanket-img{
+  position: absolute;
+  width: 50%;
+  height: 330px;
+  bottom: -80px;
+  left: 80px;
+  z-index: 2;
+
+}
+
+.index-section-baby__blanket-img--h2{
+  bottom: 20px;
+}
+
+
+
+
+.index-section-baby__baby-img{
+  position: absolute;
+  width: 48%;
+  height: 70vh;
+  top: 12vh;
+}
+
+.index-section-baby__content{
+  position: absolute;
+  width: 42%;
+  top: 20vh;
+  right: 0;
+  padding: 35px;
+  border-radius: 5px;
+
+  background-color: #fff;
+  box-shadow: 0 6px 28px 2px rgba(0, 0, 0, 0.2);
+}
+
+.index-section-baby__title{
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.index-section-baby__text{
+  font-size: 14px;
+  line-height: 18px;
+}
+
