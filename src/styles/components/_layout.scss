@@ -21,12 +21,20 @@ body{
  /* outline: 1px solid red;*/
 }
 
-.bock_img, .bock_img-full{
+
+.bock_img img{
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.bock_img-full{
   position: relative;
   overflow: hidden;
 }
 
-.bock_img img,
 .bock_img-full img{
   position: absolute;
   left: 50%;
@@ -37,10 +45,14 @@ body{
   max-height: 100%;
 }
 
+.index-full-view{
+ /* height: 100vh;*/
+  height: calc(100vh - 95px);
+
+  outline: 1px solid red;
+  background-color: gray;
 
 
-section{
-  height: 100vh;
- /* background-color: gray;
-  outline: 1px solid black;*/
+
+
 }

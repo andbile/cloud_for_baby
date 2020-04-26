@@ -1,8 +1,11 @@
 @import "../base/variables";
 
+
 .main-header, .main-header__hover{
+  position: relative;
   background-color: $bg-color-primary;
-  z-index: 10;
+  height: 95px;
+  box-shadow: 0 2px 24px rgba(26, 27, 28, 0.08);
 }
 
 .main-header__hover.fixed{
@@ -10,8 +13,8 @@
   left: 0;
   right: 0;
   width: 100%;
+  height: 95px;
   z-index: 10;
-
 }
 
 .main-header__wrp{
