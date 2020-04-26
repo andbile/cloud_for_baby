@@ -1,26 +1,32 @@
 'use strict';
 const gulp = require ('gulp'),
     eslint = require('gulp-eslint'),
-    fileInclude = require('gulp-file-include'),
-    bs = require('browser-sync').create(),
-    del = require('del'),
+    uglify = require('gulp-uglify'),
+
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    //concat = require('gulp-concat'),
     cssnano = require('gulp-cssnano'),
     rename = require('gulp-rename'),
+    autoprefixer = require('gulp-autoprefixer'),
+
     pngSprite = require('gulp.spritesmith'),
-    //debug = require('gulp-debug'),
-    //notify = require('gulp-notify');
-    gulpSvgSprite = require('gulp-svg-sprite');
+    gulpSvgSprite = require('gulp-svg-sprite'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
+
+    fileInclude = require('gulp-file-include'),
+    sourcemaps = require('gulp-sourcemaps'),
+    bs = require('browser-sync').create(),
+    del = require('del'),
+    changed = require('gulp-changed');
+   /* cache = require('gulp-cache');*/
 
 
 const path = {
     // folder where the finished files are added
     build: {
-        html: 'build/',
-        css: 'build/css',
-        js: 'build/js'
+        html: './build/',
+        css: './build/css',
+        js: './build/js'
     },
     // folder where to get files
     src: {
@@ -30,7 +36,7 @@ const path = {
         copy_img: ['src/img/**/*.*', '!src/img/sprite_png/**', '!src/img/sprite_svg/**'],
         copy_font: 'src/fonts/*.*',
         copy_lib: 'src/libs/*.*',
-        copy_files: ['src/libs/*.*', 'src/fonts/*.*', 'src/img/**/*.*', '!src/img/sprite_png/**', '!src/img/sprite_svg/**']
+        copy_files: ['src/libs/*.*', 'src/fonts/*.*'/*, 'src/img/!**!/!*.*', '!src/img/sprite_png/!**', '!src/img/sprite_svg/!**'*/]
 
     },
     // watching files
@@ -38,10 +44,10 @@ const path = {
         html: 'src/**/*.html',
         style: 'src/styles/**/*.scss',
         js: 'src/js/**/*.js',
-        img:'src/img/*.*',
+        img:['src/img/**/*.*', '!src/img/sprite_png/**', '!src/img/sprite_svg/**'],
         fonts:'src/fonts/*.*',
-        lib:'src/libs/*.*',
-        copy_files: ['src/libs/**/*.*', 'src/fonts/**/*.*', 'src/img/*.*']
+        lib:'src/libs/*.*'
+      /*  copy_files: ['src/libs/!**!/!*.*', 'src/fonts/!**!/!*.*', 'src/img/!*.*']*/
     },
     browserSyncWatch:'build/**/*.*',
     clean: ['./build/**', '!./build']
@@ -63,23 +69,31 @@ gulp.task('styles', function () {
     return gulp.src(path.src.style)
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            cascade: true
+        }))
         .pipe(cssnano())
         .pipe(rename({suffix: '.min'}))
-        .pipe(sourcemaps.write('/', {
+        .pipe(sourcemaps.write('../maps/', {
             sourceMappingURLPrefix: ''}))
         .pipe(gulp.dest(path.build.css));
 });
 
 gulp.task('scripts', function () {
     return gulp.src(path.src.js)
+
         .pipe(fileInclude({
             prefix: '@@',
             basepath: '@file'
         }))
+        .pipe(sourcemaps.init())
         .pipe(eslint())
         .pipe(eslint.format())// вывод ошибок
         /*.pipe(eslint.failAfterError())*/
-        // .pipe(concat('main.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('../maps/', {
+            sourceMappingURLPrefix: ''}))
         .pipe(gulp.dest(path.build.js));
 });
 
@@ -88,22 +102,40 @@ gulp.task('copyFiles', function () {
     return gulp.src(path.src.copy_files)
         .pipe(gulp.dest(function(file){
             let path  = file.base;
-            console.log(path);
             return path.replace('src', 'build');
         }));
 });
 
-gulp.task('copyImg', function () {
-    return gulp.src(path.src.copy_img)
+
+var newPath;
+gulp.task('copyImg', function (callback) {
+
+    gulp.src(path.src.copy_img)
+        .on('data', function (file) {
+            let path  = file.base;
+            newPath = path.replace('src', 'build');
+        })
+
+        .pipe(changed(newPath + '', {hasChanged: changed.compareLastModifiedTime}))
+
+        .pipe(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant({quality: '65-70', speed: 5})]
+        }))
+
         .pipe(gulp.dest(function(file){
             let path  = file.base;
             console.log(path);
             return path.replace('src', 'build');
         }));
+
+    callback();
 });
 
 gulp.task('copyFont', function () {
-    return gulp.src(path.src.copy_font)
+    return gulp.src(path.src.copy_font, {since:gulp.lastRun('copyFont')})
         .pipe(gulp.dest(function(file){
             let path  = file.base;
             console.log(path);
@@ -112,7 +144,7 @@ gulp.task('copyFont', function () {
 });
 
 gulp.task('copyLib', function () {
-    return gulp.src(path.src.copy_lib)
+    return gulp.src(path.src.copy_lib, {since:gulp.lastRun('copyLib')})
         .pipe(gulp.dest(function(file){
             let path  = file.base;
             console.log(path);
@@ -125,6 +157,8 @@ gulp.task('copyLib', function () {
 gulp.task('clean', function () {
     return del(path.clean);
 });
+
+
 
 function getSvgSprite() {
     return gulp.src('src/img/sprite/*.svg')
@@ -140,7 +174,7 @@ function getSvgSprite() {
 
 function getPngSprite(callback){
     let spriteData =
-        gulp.src('./src/img/sprite_png/*.*') // путь, откуда берем картинки для спрайта
+        gulp.src('./src/img/sprite_png/*.*') // путь, откуда берём картинки для спрайта
         .pipe(pngSprite({
             imgName: 'sprite.png',
             cssName: '_sprite.scss',
@@ -168,9 +202,9 @@ function browserSync(){
 
 
 function watch(){
-    gulp.watch(path.watch.html, gulp.series('html'));
-    gulp.watch(path.watch.style, gulp.series('styles'));
-    gulp.watch(path.watch.js, gulp.series('scripts'));
+    gulp.watch(path.watch.html, {usePolling: true}, gulp.series('html'));
+    gulp.watch(path.watch.style, {usePolling: true}, gulp.series('styles'));
+    gulp.watch(path.watch.js, {usePolling: true}, gulp.series('scripts'));
 
     gulp.watch(path.watch.img, gulp.series('copyImg'));
     gulp.watch(path.watch.fonts, gulp.series('copyFont'));
@@ -179,8 +213,8 @@ function watch(){
 
 
 // default task
-exports.default = gulp.series('clean', gulp.parallel('html', 'styles', 'scripts', 'copyFiles'), gulp.parallel(watch, browserSync));
+exports.default = gulp.series('clean', gulp.parallel('html', 'styles', 'scripts', 'copyFiles', 'copyImg'), gulp.parallel(watch, browserSync));
 
-exports.sprite = gulp.parallel(getSvgSprite);
+exports.spriteSvg = gulp.parallel(getSvgSprite);
 exports.spritePng = gulp.parallel(getPngSprite);
 
