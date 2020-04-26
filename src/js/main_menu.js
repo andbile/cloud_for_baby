@@ -25,36 +25,11 @@
         });
 
 
-        // кнопка
-        //var $btn = $('[data-popup-btn]');
 
 
-        // подменю
-        //var $submenu = $('[data-main-submenu]');
 
 
-        // показываем выпадающее меню
-     /*   $btn.on('click', function (e) {
-            $(this).toggleClass('active');
 
-            if($btn.hasClass('active')){
-                $submenu.addClass('active');
-                var height = menuHeight + 'px';
-                TweenMax.to($submenu, 1, {delay:0.3, top: height, opacity: 1});
-            }else{
-                TweenMax.to($submenu, 1, {delay:0.3, top: '-1000px', opacity: 0});
-            }
-        });*/
-
-
-        // кнопка поиска
-       /* $('[data-btn-search]').on('click', function (e) {
-            e.preventDefault();
-
-            $(".input").toggleClass("active");
-            $(".main-menu__search").toggleClass("active");
-            $(this).toggleClass('active');
-        });*/
     }
 
     // показываем выпадающее меню
