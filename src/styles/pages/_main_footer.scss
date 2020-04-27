@@ -98,6 +98,7 @@
   font-size: 12px;
   line-height: 14px;
 
+
   p{
     margin-bottom: 30px;
   }
@@ -108,6 +109,13 @@
 
   a{
     text-decoration: underline;
+  }
+
+  p:nth-child(2){
+    outline: 5px dashed red;
+  }
+  p:nth-child(3){
+    outline: 5px dashed red;
   }
 }
 
