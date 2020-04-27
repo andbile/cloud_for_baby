@@ -11,7 +11,8 @@ const gulp = require ('gulp'),
     pngSprite = require('gulp.spritesmith'),
     gulpSvgSprite = require('gulp-svg-sprite'),
     imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
+    imageminPngquant = require('imagemin-pngquant'),
+    imageminJpegRecompress = require('imagemin-jpeg-recompress'),
 
     fileInclude = require('gulp-file-include'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -108,9 +109,8 @@ gulp.task('copyFiles', function () {
 
 
 var newPath;
-gulp.task('copyImg', function (callback) {
-
-    gulp.src(path.src.copy_img)
+gulp.task('copyImg', function () {
+    return gulp.src(path.src.copy_img)
         .on('data', function (file) {
             let path  = file.base;
             newPath = path.replace('src', 'build');
@@ -118,12 +118,18 @@ gulp.task('copyImg', function (callback) {
 
         .pipe(changed(newPath + '', {hasChanged: changed.compareLastModifiedTime}))
 
-        .pipe(imagemin({
-            interlaced: true,
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant({quality: '65-70', speed: 5})]
-        }))
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.mozjpeg({quality: 75, progressive: true}),
+          /*  imagemin.optipng({optimizationLevel: 5, bitDepthReduction: true}),*/
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: false},
+                    {cleanupIDs: false}
+                ]
+            })
+        ]))
+
 
         .pipe(gulp.dest(function(file){
             let path  = file.base;
@@ -131,11 +137,10 @@ gulp.task('copyImg', function (callback) {
             return path.replace('src', 'build');
         }));
 
-    callback();
 });
 
 gulp.task('copyFont', function () {
-    return gulp.src(path.src.copy_font, {since:gulp.lastRun('copyFont')})
+    return gulp.src(path.src.copy_font)
         .pipe(gulp.dest(function(file){
             let path  = file.base;
             console.log(path);
@@ -144,7 +149,7 @@ gulp.task('copyFont', function () {
 });
 
 gulp.task('copyLib', function () {
-    return gulp.src(path.src.copy_lib, {since:gulp.lastRun('copyLib')})
+    return gulp.src(path.src.copy_lib)
         .pipe(gulp.dest(function(file){
             let path  = file.base;
             console.log(path);
@@ -160,8 +165,8 @@ gulp.task('clean', function () {
 
 
 
-function getSvgSprite() {
-    return gulp.src('src/img/sprite/*.svg')
+function getSvgSprite(callback) {
+    gulp.src('src/img/sprite/*.svg')
         .pipe(gulpSvgSprite({
             mode: {
                 stack: {
@@ -169,7 +174,9 @@ function getSvgSprite() {
                 }
             }
         }))
-        .pipe(gulp.dest('src/img'))
+        .pipe(gulp.dest('src/img'));
+
+    callback();
 }
 
 function getPngSprite(callback){
