@@ -5,9 +5,12 @@
   background: url("../img/bg_blanket.jpg") no-repeat center center;
   background-size: cover;
 
-  .container{
-    position: relative;
+  .container, .index-section-baby__wrp{
     height: 100%;
+    position: relative;
+  }
+
+  .index-section-baby__wrp{
     overflow: hidden;
   }
 }
@@ -42,16 +45,16 @@
 
 .index-section-baby__blanket-img{
   position: absolute;
-  width: 50%;
-  height: 330px;
-  bottom: -80px;
+  width: 45%;
+  //height: 330px;
+  bottom: -300px;
   left: 80px;
   z-index: 2;
 
 }
 
 .index-section-baby__blanket-img--h2{
-  bottom: 20px;
+  bottom: -210px;
 }
 
 

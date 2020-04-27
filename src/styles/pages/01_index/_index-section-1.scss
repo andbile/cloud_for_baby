@@ -40,6 +40,8 @@
   text-align: center;
   color: $bg-color--blue;
 
+  outline: 5px dashed red;
+
   background: radial-gradient(ellipse at center, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%); ;
 }
 

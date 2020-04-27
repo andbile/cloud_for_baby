@@ -2,71 +2,94 @@
 
 .btn{
   display: inline-block;
-  padding: 7px 28px;
+  padding: 15px 28px;
 
   font-family: 'Myriad Pro', sans-serif;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
-  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1;
 
-  border-radius: 15px;
-  box-shadow: 0 2px #188375;
+  border: none;
+  border-radius: 25px;
+  box-shadow: none;
+  outline: none;
   cursor: pointer;
   transition: all 0.4s;
 }
 
 .btn.btn-submit{
-  padding: 7px 28px;
+  padding: 8px 28px;
+  padding-top: 10px;
   border: none;
   border-radius: 15px;
   background-color: #1ab7a3;
+  font-size: 14px;
+  line-height: 1;
   color: #ffffff;
+  text-transform: uppercase;
+  box-shadow: 0 2px #188375;
 
   &:hover{
     background-color: #169e8d;
-    border-color: #1ab7a3;
+    box-shadow: 0 2px #13685d;
   }
 }
 
-/*
-input[type='submit'].btn{
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border: none;
-  outline: none;
-  cursor: pointer;
+
+.btn.btn-next, .btn.btn-prev{
+  position: absolute;
+  font-weight: normal;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  &:before{
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    transform: translateY(-51%);
+  }
 }
-*/
+
+.btn.btn-next{
+  padding-right: 35px;
+  right: -200px;
+
+  &:before{
+    right: 15px;
+  }
+}
+
+
+.btn.btn-prev{
+  padding-left: 35px;
+  left: -200px;
+
+  &:before{
+    left: 15px;
+  }
+}
 
 
 
-/*.btn--blue{
+.btn.btn-blue{
+  background-color: #1ab7a3;
   color: #ffffff;
- !* background-color: $font-color-blue;*!
-  width: 100%;
+  box-shadow: 0 3px #188375;
 
   &:hover{
-    background-color: #549BFB;
-  }
-
-  &:active, &:visited{
-    background-color: #397AD0;
-  }
-}*/
-/*
-.btn--grey{
-  background-color: $bg-color-border;
-  color: $font-color-blue;
-
-  &:visited, &:active{
-    color: $font-color-blue;
-    background-color: $bg-color-border;
-  }
-
-  &:hover{
-    color: #ffffff;
-    background-color: #A5A5A5;
+    background-color: #169e8d;
+    box-shadow: 0 2px #13685d;
   }
 }
-*/
+
+.btn-type2{
+  padding-top: 17px;
+  padding-bottom: 13px;
+  min-width: 190px;
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+

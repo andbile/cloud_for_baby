@@ -54,6 +54,8 @@
 
 .icon-cancel:before { content: '\e800'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-angle-left:before { content: '\f104'; } /* '' */
+.icon-angle-right:before { content: '\f105'; } /* '' */
 .icon-instagram:before { content: '\f16d'; } /* '' */
 .icon-vkontakte:before { content: '\f189'; } /* '' */
 .icon-odnoklassniki:before { content: '\f263'; } /* '' */
@@ -61,7 +63,7 @@
 
 
 .icon:before{
-  font-family: 'cloud_for_baby';
+  font-family: 'cloud_for_baby', sans-serif;
   font-size: 14px;
   color: inherit;
 }
