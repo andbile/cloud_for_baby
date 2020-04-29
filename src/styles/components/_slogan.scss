@@ -1,0 +1,31 @@
+.slogan__wrp{
+  width: 30%;
+  text-align: center;
+
+}
+
+.slogan__title{
+
+}
+
+.slogan__text{
+  font-family: 'AvantGardeGothicCTT', sans-serif;
+  font-size: 22px;
+  line-height: 29px;
+
+  p{
+    margin: 0;
+  }
+
+  a{
+    font-weight: bold;
+  }
+
+  a:last-child{
+    text-decoration: underline;
+  }
+
+  a:hover{
+    color: $bg-color-link--hover;
+  }
+}

@@ -27,6 +27,23 @@ h1, h2, h3, h4, h5, h6{
   font-size: 24px;
 }
 
+.slogan{
+  /*font-family: Besom, sans-serif;*/
+}
+
+.text-block{
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.text-block__link{
+  font-weight: bold;
+  text-decoration: underline;
+
+  &:hover{
+    color: $bg-color-link--hover
+  }
+}
 
 
 

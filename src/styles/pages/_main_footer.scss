@@ -98,7 +98,6 @@
   font-size: 12px;
   line-height: 14px;
 
-
   p{
     margin-bottom: 30px;
   }
@@ -107,15 +106,16 @@
     margin-bottom: 0;
   }
 
-  a{
-    text-decoration: underline;
-  }
+  .policy__wrp{
+    font-family: "Neue Haas Unica", sans-serif;
 
-  p:nth-child(2){
-    outline: 5px dashed red;
-  }
-  p:nth-child(3){
-    outline: 5px dashed red;
+    a{
+      text-decoration: underline;
+    }
+
+    a:hover{
+      color: $bg-color-link--hover;
+    }
   }
 }
 

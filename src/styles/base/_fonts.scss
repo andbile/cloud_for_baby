@@ -17,7 +17,6 @@
   font-style: normal;
 }
 
-//
 @font-face {
   font-family: 'Myriad Pro';
   src: url('../fonts/MyriadPro-Regular.woff2') format('woff2'),
@@ -36,8 +35,35 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: '18VAGRoundedMNormal';
+  src: url('../fonts/18VAGRoundedMNormal.eot');
+  src: url('../fonts/18VAGRoundedMNormal.woff2') format('woff2'),
+  url('../fonts/18VAGRoundedMNormal.woff') format('woff'),
+  url('../fonts/18VAGRoundedMNormal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Unica';
+  src: url('../fonts/NeueHaasUnica-Regular.eot');
+  src: url('../fonts/NeueHaasUnica-Regular.woff2') format('woff2'),
+  url('../fonts/NeueHaasUnica-Regular.woff') format('woff'),
+  url('../fonts/NeueHaasUnica-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
+/*@font-face {
+  font-family: 'Besom';
+  src: url('../fonts/Besom.woff2') format('woff2'),
+  url('../fonts/Besom.woff') format('woff'),
+  url('../fonts/Besom.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}*/
 
 
 @font-face {
@@ -51,6 +77,9 @@
   font-weight: normal;
   font-style: normal;
 }
+
+
+
 
 .icon-cancel:before { content: '\e800'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */

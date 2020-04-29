@@ -186,7 +186,7 @@ function getPngSprite(callback){
             imgName: 'sprite.png',
             cssName: '_sprite.scss',
             cssFormat: 'css',
-            algorithm: 'binary-tree',
+            algorithm: 'left-right',
             cssTemplate: 'scss.template.mustache'
         }));
 

@@ -25,7 +25,7 @@
     position: absolute;
     display: block;
     background-image: url(../img/sprite.png);
-    background-position: -15px -33px;
+    background-position: 0px 0px;
     width: 14px;
     height: 14px;
     right: -27px;
@@ -205,6 +205,7 @@
   justify-content: space-around;
   overflow: hidden;
 }
+/*
 
 // кнопки слайдра
 .slider-btn-wrp{
@@ -255,6 +256,7 @@
   }
 }
 
+*/
 
 
 
@@ -296,7 +298,7 @@
 
 
 // слайдер - бу машины
-.slider-btn-wrp---model-used{
+/*.slider-btn-wrp---model-used{
   .slider-btn{
     top: 50%;
   }
@@ -311,7 +313,7 @@
     transform: translate(50%, 50%);
   }
 
-}
+}*/
 
 
 

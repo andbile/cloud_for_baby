@@ -35,12 +35,12 @@
 .index-section-1__text{
   padding-top: 2vh;
   padding-bottom: 2vh;
+
+  font-family: '18VAGRoundedMNormal', sans-serif;
   font-size: 26px;
   line-height: 32px;
   text-align: center;
   color: $bg-color--blue;
-
-  outline: 5px dashed red;
 
   background: radial-gradient(ellipse at center, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%); ;
 }

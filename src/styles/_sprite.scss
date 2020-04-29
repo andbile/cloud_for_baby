@@ -1,56 +1,91 @@
-.icon-s-heart_black:before {
-  display: block;
-  background-image: url(../img/sprite.png);
-  background-position: -16px 0px;
-  width: 16px;
-  height: 16px;
-}
-.icon-s-heart_blue:before {
-  display: block;
-  background-image: url(../img/sprite.png);
-  background-position: -32px 0px;
-  width: 16px;
-  height: 16px;
-}
-.icon-s-heart_green:before {
-  display: block;
-  background-image: url(../img/sprite.png);
-  background-position: -32px -17px;
-  width: 15px;
-  height: 15px;
-}
-.icon-s-heart_grey:before {
+.icon-s-01_heart_red:before {
   display: block;
   background-image: url(../img/sprite.png);
   background-position: 0px 0px;
-  width: 16px;
-  height: 17px;
-}
-.icon-s-heart_lilac:before {
-  display: block;
-  background-image: url(../img/sprite.png);
-  background-position: 0px -17px;
-  width: 16px;
-  height: 16px;
-}
-.icon-s-heart_orange:before {
-  display: block;
-  background-image: url(../img/sprite.png);
-  background-position: -16px -17px;
-  width: 16px;
-  height: 16px;
-}
-.icon-s-heart_red:before {
-  display: block;
-  background-image: url(../img/sprite.png);
-  background-position: -15px -33px;
   width: 14px;
   height: 14px;
 }
-.icon-s-heart_yellow:before {
+.icon-s-02_heart_orange:before {
   display: block;
   background-image: url(../img/sprite.png);
-  background-position: 0px -33px;
+  background-position: -44px 0px;
+  width: 16px;
+  height: 16px;
+}
+.icon-s-03_heart_black:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -60px 0px;
+  width: 16px;
+  height: 16px;
+}
+.icon-s-04_heart_green:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -14px 0px;
   width: 15px;
   height: 15px;
+}
+.icon-s-05_heart_blue:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -76px 0px;
+  width: 16px;
+  height: 16px;
+}
+.icon-s-06_heart_lilac:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -92px 0px;
+  width: 16px;
+  height: 16px;
+}
+.icon-s-07_heart_yellow:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -29px 0px;
+  width: 15px;
+  height: 15px;
+}
+.icon-s-08_heart_grey:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -108px 0px;
+  width: 16px;
+  height: 17px;
+}
+.icon-s-09_smile:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -191px 0px;
+  width: 35px;
+  height: 35px;
+}
+.icon-s-10_smile:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -124px 0px;
+  width: 33px;
+  height: 32px;
+}
+.icon-s-11_smile:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -157px 0px;
+  width: 34px;
+  height: 33px;
+}
+.icon-s-12_smile:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -226px 0px;
+  width: 35px;
+  height: 34px;
+}
+.icon-s-13_smile:before {
+  display: block;
+  background-image: url(../img/sprite.png);
+  background-position: -261px 0px;
+  width: 39px;
+  height: 31px;
 }
