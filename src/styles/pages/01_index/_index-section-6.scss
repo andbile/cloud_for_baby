@@ -1,0 +1,158 @@
+.index-section-6{
+  position: relative;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background: url("../img/bg_slider3.jpg") $bg-color-primary no-repeat center center;
+  background-size: cover;
+}
+
+
+.index-section-6__wrp{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.index-section-6__col-left{
+  width: 66%;
+
+
+  .section-title{
+    margin-bottom: 5vh;
+  }
+
+  .text-block{
+    text-align: center;
+  }
+}
+
+.slider-type-3{
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.slide-item--type-3{
+  position: relative;
+  height: 35.0vw;
+  padding-top: 9%;
+  padding-left: 11%;
+  background: url("../img/bg_slider_type-3.png") no-repeat center top;
+  background-size: contain;
+
+
+  .slide-item__user{
+    display: flex;
+    position: relative;
+    margin-bottom: 3%;
+    width: 70%;
+   /* top: 13%;
+    left: 12%;*/
+
+  }
+
+  .user__photo{
+    width: 96px;
+    height: 96px;
+    border-radius: 48px;
+    background-color: #3c57ff;
+    overflow: hidden;
+  }
+
+  .user__title{
+    position: relative;
+    align-self: center;
+    padding-left: 20px;
+
+    font-family: 'AvantGardeGothicCTT', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .slide-item__content{
+    width: 90%;
+
+  }
+
+  .user__text{
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .slide-item__ink{
+    padding-right: 25px;
+    text-align: right;
+
+    a{
+      font-family: 'AvantGardeGothicCTT', sans-serif;
+      font-size: 14px;
+      text-decoration: underline;
+      color: #00aeff;
+      transition: color 0.4s;
+    }
+
+    a:hover{
+      color: #005b85;
+    }
+  }
+}
+
+.slider-btn-wrp--type-3{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50px);
+  width: 100%;
+
+  .slider-btn{
+    position: absolute;
+    cursor: pointer;
+
+
+
+    &:before{
+      font-size: 70px;
+      line-height: 1;
+      color: #b8b7b7;
+      transition: all 0.4s;
+    }
+
+    &:hover:before{
+      color: #706f6f;
+    }
+
+  }
+
+  .slider-btn--prev{
+    left: 0;
+  }
+
+  .slider-btn--next{
+    right: 0;
+  }
+}
+
+.index-section-6__wrp2{
+  padding-top: 2vh;
+
+  .btns-block-text{
+    margin-bottom: 20px;
+
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .index-section-6__btns{
+
+    a{
+      margin-right: 15px;
+    }
+
+    a:last-child{
+      margin-right: 0;
+    }
+
+  }
+
+}
