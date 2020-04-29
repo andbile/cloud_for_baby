@@ -17,27 +17,29 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.20.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cache": "^1.1.3",
     "gulp-changed": "^4.0.2",
     "gulp-cssnano": "^2.1.3",
     "gulp-eslint": "^6.0.0",
-    "gulp-file-include": "^2.1.1",
+    "gulp-file-include": "^2.2.2",
     "gulp-imagemin": "^7.1.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
     "gulp.spritesmith": "^6.11.0",
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.14.0",
+
+    "minimist": ">=0.2.1"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
   },
   "browserslist": [
     "last 2 version",
