@@ -39,7 +39,7 @@
     "minimist": ">=0.2.1"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
+    "normalize.css": "^8.0.1"
   },
   "browserslist": [
     "last 2 version",
