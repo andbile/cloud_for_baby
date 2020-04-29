@@ -1,0 +1,46 @@
+.index-section-7{
+  position: relative;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background: url("../img/bg_section_01.jpg") $bg-color-primary no-repeat center center;
+  background-size: cover;
+}
+
+.index-section-7__wrp{
+  display: flex;
+  justify-content: space-between;
+
+  .section-title{
+    margin-bottom: 5vh;
+  }
+}
+
+.index-section-7__col-left{
+  width: 66%;
+
+}
+
+.index-section-7__wrp2{
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.index-section-7__logo{
+  flex: none;
+  width: 150px;
+  height: 135px;
+  margin-right: 45px;
+
+  align-self: center;
+}
+
+.index-section-7__certificates{
+  display: flex;
+  justify-content: space-between;
+
+  .certificates__item{
+    width: 24%;
+    height: 15vw;
+    /*height: 307px;*/
+  }
+}
