@@ -1,0 +1,97 @@
+.index-section-8{
+  position: relative;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background: url("../img/bg_section_02.jpg") $bg-color-primary no-repeat center center;
+  background-size: cover;
+}
+
+.index-section-8__wrp{
+  display: flex;
+  justify-content: space-between;
+
+  .section-title{
+    margin-bottom: 5vh;
+  }
+}
+
+.index-section-8__col-left{
+  width: 66%;
+
+
+}
+
+.index-section-8__shops{
+  display: flex;
+  justify-content: space-between;
+}
+
+.index-section-8__shops{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .shops__item{
+    position: relative;
+    width: calc(1/3*100% - (1 - 1/3)*40px);
+    margin-bottom: 40px;
+    height: 189px;
+
+    border-radius: 4px;
+  }
+
+  .shops__item:nth-child(3n+1){
+    background-color: #6f3cf9;
+  }
+
+  .shops__item:nth-child(3n+2){
+    background-color: #000000;
+  }
+
+  .shops__item:nth-child(3n+3){
+    background-color: #0948f5;
+  }
+
+  .shops__logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    color: #ffffff;
+  }
+
+  .shops__shop-address{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+
+    a{
+      display: block;
+
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    a:first-child{
+      margin-bottom: 20px;
+    }
+
+  }
+
+  .shops__item.active{
+    .shops__logo{
+      display: none;
+    }
+
+    .shops__shop-address{
+      display: block;
+    }
+  }
+
+}
+
+
