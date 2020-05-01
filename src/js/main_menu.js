@@ -11,18 +11,11 @@
 
         // установка высоты для обёртки и плавающего  main-header
         var heightHeaderNode = Math.round($headerNode.innerHeight());
-     /*   $parentNode.innerHeight(heightHeaderNode);
-        $headerNode.innerHeight(heightHeaderNode);*/
+        $parentNode.innerHeight(heightHeaderNode);
+        $headerNode.innerHeight(heightHeaderNode);
 
-        // при скроле двигаем меню
-        $(window).scroll(function(){
-            var scrollTop = $(window).scrollTop();
-            if (scrollTop > 1){
-                $headerNode.addClass("fixed");
-            } else if(scrollTop <= 1) {
-                $headerNode.removeClass("fixed");
-            }
-        });
+        $headerNode.addClass("fixed");
+
     }
 
     // показываем выпадающее меню
