@@ -37,7 +37,7 @@
     // TODO скролл через мобильные экраны
    /* window.addEventListener('scroll', windowScrollHandler);*/
 
-    function windowScrollHandler (event){
+    function windowScrollHandler (evt){
         // после срабатывания события отключаем обработчики
         window.removeEventListener('keydown', windowScrollHandler);
         window.removeEventListener('wheel', windowScrollHandler);
@@ -47,7 +47,7 @@
         var currentIndex = $section.index($current);
 
         // индекс следующего слайда
-        var nextNode = getNextIndex(event, currentIndex);
+        var nextNode = getNextIndex(evt, currentIndex);
 
         // проматываем слайд
         scrolling (nextNode);
@@ -65,19 +65,19 @@
     }
 
     // получаем индекс следующего блока
-    function getNextIndex (event, currentIndex) {
+    function getNextIndex (evt, currentIndex) {
 
         // событие - нажатие кнопок на клавиатуре
-        var keyCode = event.keyCode;
+        var keyCode = evt.keyCode;
         var nextNode = currentIndex;
 
-        if(keyCode === ARROW_DOWN || event.deltaY > 10){
+        if(keyCode === ARROW_DOWN || evt.deltaY > 10){
             if(nextNode === $section.length - 1){
                 nextNode = $section.length - 1;
             }else nextNode = currentIndex + 1;
         }
 
-        if(keyCode === ARROW_UP || event.deltaY < -10){
+        if(keyCode === ARROW_UP || evt.deltaY < -10){
             if(nextNode === 0){
                 nextNode = 0
             }else nextNode = currentIndex - 1;
