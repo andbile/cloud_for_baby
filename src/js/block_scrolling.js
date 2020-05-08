@@ -1,38 +1,58 @@
 (function () {
-
     // проверка наличия блока для скролинга
     if( $('[data-is-scroll-block]').length === 0) return;
 
     var ARROW_UP = 38;
     var ARROW_DOWN = 40;
-    var $section = $('[data-anchor]');
+    var WINDOW_WIDTH_MIN = 1024;
+    // TODO TOP_SHIFT получать динамически из размера main-header
+    var TOP_SHIFT = 95;
 
-    // TODO на мобильных версиях можно удалять якаря у блоков которые низя проматывать
+    var $sections = $('[data-anchor]');
 
-    // TODO получать размеры из блока
-    var topShift = 95;
+    if(device.type === 'desktop' || $(window).width() >= WINDOW_WIDTH_MIN){
+        // включение прокрутки
+        enable();
+    }
 
-    // начальная инициализация
-    initial();
+    // при ресайзе, сбрасываем все настройки по умолчанию
+    var isEventResize = false;
+    $(window).resize(function() {
+        setTimeout(function () {
+            if(!isEventResize){
+                if(device.type === 'desktop' || $(window).width() >= WINDOW_WIDTH_MIN) {enable();}
+                else disable();
+                isEventResize = true;
+            }
+        },500);
+        isEventResize = false;
+    });
 
-    function initial() {
+    // отключаем прокрутку по секциям и возвращаем установки
+    function disable() {
+        $('body').css({'overflow' : 'visible'});
+        
+        window.removeEventListener('keydown', windowScrollHandler);
+        window.removeEventListener('wheel', windowScrollHandler);
+    }
+
+    // включение прокрутки
+    function enable() {
         $('body').css({'overflow' : 'hidden'});
 
         // определяем на каком слайде была перезагрузка страницы
         var fullHref = document.location.href;
         var anchor = fullHref.slice(fullHref.indexOf('/#') + 2);
-        var $currentNode = $section.filter('[data-anchor="' + anchor + '"]');
+        var $currentNode = $sections.filter('[data-anchor="' + anchor + '"]');
 
-        $section.removeClass('active');
+        // удаляем пометки у слайдов и ставим на текущем активном (показанном)
+        $sections.removeClass('active');
         $currentNode.addClass('active');
+
+        window.addEventListener('wheel', windowScrollHandler);
+        window.addEventListener('keydown', windowScrollHandler);
     }
 
-
-
-
-    window.addEventListener('wheel', windowScrollHandler);
-
-    window.addEventListener('keydown', windowScrollHandler);
 
     // TODO скролл через мобильные экраны
    /* window.addEventListener('scroll', windowScrollHandler);*/
@@ -43,8 +63,8 @@
         window.removeEventListener('wheel', windowScrollHandler);
 
         // текущий слайд 
-        var $current = $section.filter('.active');
-        var currentIndex = $section.index($current);
+        var $current = $sections.filter('.active');
+        var currentIndex = $sections.index($current);
 
         // индекс следующего слайда
         var nextNode = getNextIndex(evt, currentIndex);
@@ -52,9 +72,8 @@
         // проматываем слайд
         scrolling (nextNode);
 
-        // получаем якорь у текущего блока
-        // устанавливаем ссылку
-        var currentAnchor = $section.eq(nextNode).data("anchor");
+        // получаем якорь у текущего блока и устанавливаем ссылку
+        var currentAnchor = $sections.eq(nextNode).data("anchor");
         document.location.href = '/#' + currentAnchor;
 
         // после перемотки включаем обработчики событий
@@ -72,8 +91,8 @@
         var nextNode = currentIndex;
 
         if(keyCode === ARROW_DOWN || evt.deltaY > 10){
-            if(nextNode === $section.length - 1){
-                nextNode = $section.length - 1;
+            if(nextNode === $sections.length - 1){
+                nextNode = $sections.length - 1;
             }else nextNode = currentIndex + 1;
         }
 
@@ -89,12 +108,12 @@
     // прокрутка
     function scrolling (index) {
 
-        var destination = $section.eq(index).offset().top - topShift;
+        var destination = $sections.eq(index).offset().top - TOP_SHIFT;
 
         $('body, html').animate({scrollTop: destination}, 500);
 
         // удаляем все классы active
-        $section.removeClass('active');
-        $section.eq(index).addClass('active');
+        $sections.removeClass('active');
+        $sections.eq(index).addClass('active');
     }
 })();
