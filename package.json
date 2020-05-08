@@ -35,10 +35,11 @@
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
     "node-sass": "^4.14.0",
-
     "minimist": ">=0.2.1"
   },
   "dependencies": {
+    "current-device": "^0.10.1",
+    "jquery": "^3.5.1",
     "normalize.css": "^8.0.1"
   },
   "browserslist": [
