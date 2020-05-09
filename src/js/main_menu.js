@@ -10,13 +10,43 @@
         var $headerNode = $('[data-main-header-hover]');
 
         // установка высоты для обёртки и плавающего  main-header
-        var heightHeaderNode = Math.round($headerNode.innerHeight());
-        $parentNode.innerHeight(heightHeaderNode);
-        $headerNode.innerHeight(heightHeaderNode);
 
-        $headerNode.addClass("fixed");
+        setHeight();
 
+
+
+
+
+        // при ресайзе, сбрасываем все настройки по умолчанию
+        var isEventResize = false;
+        $(window).resize(function() {
+            setTimeout(function () {
+                if(!isEventResize){
+                    reset();
+                    setHeight();
+                    isEventResize = true;
+                }
+            },500);
+            isEventResize = false;
+        });
+
+        function reset() {
+            //$headerNode.removeClass("fixed");
+            $parentNode.css('height', '');
+            $headerNode.css('height', '');
+            //$headerNode.addClass("fixed");
+        }
+
+        function setHeight() {
+            var heightHeaderNode = Math.round($headerNode.innerHeight());
+            $parentNode.innerHeight(heightHeaderNode);
+            $headerNode.innerHeight(heightHeaderNode);
+            $headerNode.addClass("fixed");
+        }
     }
+
+
+
 
     // показываем выпадающее меню
     var $btn = $('[data-main-menu-btn-show]');
