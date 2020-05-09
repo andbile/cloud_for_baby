@@ -10,9 +10,11 @@
 
     var $sections = $('[data-anchor]');
 
-    if(device.type === 'desktop' || $(window).width() >= WINDOW_WIDTH_MIN){
+    if(device.type === 'desktop' && $(window).width() >= WINDOW_WIDTH_MIN){
         // включение прокрутки
         enable();
+    }else{
+        disable();
     }
 
     // при ресайзе, сбрасываем все настройки по умолчанию
@@ -20,7 +22,9 @@
     $(window).resize(function() {
         setTimeout(function () {
             if(!isEventResize){
-                if(device.type === 'desktop' || $(window).width() >= WINDOW_WIDTH_MIN) {enable();}
+                if(device.type === 'desktop' && $(window).width() >= WINDOW_WIDTH_MIN) {
+                    enable();
+                }
                 else disable();
                 isEventResize = true;
             }
