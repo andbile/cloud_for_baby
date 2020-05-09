@@ -1,4 +1,4 @@
-#overlay{
+.overlay{
   position: fixed;
   display: none;
   top: 0;
@@ -12,14 +12,18 @@
   z-index: 90;
 }
 
-#overlay.active--fadeout{
+.overlay.active--fadeout{
   display: block;
   animation: fadeOut 0.9s;
 }
 
-#overlay.active{
+.overlay.active{
   display: block;
   animation: fade 0.5s;
+}
+
+.overlay--main-header{
+  z-index: 80;
 }
 
 

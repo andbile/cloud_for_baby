@@ -1,6 +1,7 @@
 @import "../base/variables";
 
 .btn{
+  position: relative;
   display: inline-block;
   padding: 15px 28px;
 
@@ -12,27 +13,74 @@
   border: none;
   border-radius: 25px;
   box-shadow: none;
+
+  overflow: hidden;
   outline: none;
   cursor: pointer;
-  transition: all 0.4s;
+
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: -200%;
+
+    height: 150%;
+    width: 150%;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: skew(30deg);
+    transition: left 0.75s ease-in-out;
+  }
+
+  &:before{
+    transition-delay: 0.25s;
+  }
+
+  &:after{
+    transition-delay: 0s;
+  }
+
+ &:hover:before {
+    left: -25%;
+    transition-delay: 0s;
+  }
+  &:hover:after {
+    left: -25%;
+    transition-delay: 0.25s;
+  }
+
 }
 
+
 .btn.btn-submit{
-  padding: 8px 28px;
-  padding-top: 10px;
-  border: none;
+  align-self: flex-start;
+  padding: 0;
+
   border-radius: 15px;
   background-color: #1ab7a3;
-  font-size: 14px;
-  line-height: 1;
-  color: #ffffff;
-  text-transform: uppercase;
   box-shadow: 0 2px #188375;
+  cursor: pointer;
 
-  &:hover{
+  input{
+    padding: 7px 28px;
+    padding-top: 11px;
+    border: none;
+    background-color: transparent;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
+ /* &:hover{
     background-color: #169e8d;
     box-shadow: 0 2px #13685d;
-  }
+  }*/
 }
 
 

@@ -22,7 +22,7 @@
     var $btn = $('[data-main-menu-btn-show]');
     var $btnClose = $('[data-main-menu-btn--close]');
     var $popupMenu = $('[data-main-menu]');
-    var $overlay = $('#overlay');
+    var $overlay = $('#overlay--main-header');
 
     // показываем меню
     $btn.on('click', function () {

@@ -52,9 +52,11 @@
   background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 100%); ;
 }
 
+/*
 #animate_background_1{
   outline: 1px solid red;
   position: absolute;
   top: 0;
   left: 0;
-}
+  z-index: 2;
+}*/

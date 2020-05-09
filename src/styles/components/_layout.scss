@@ -48,11 +48,23 @@ body{
 }
 
 .index-full-view{
- /* height: 100vh;*/
   height: calc(100vh - 95px);
-
-/*  outline: 1px solid red;*/
   background-color: gray;
-
   overflow: hidden;
+}
+
+.scrollbar-enabled{
+  overflow: auto;
+  height: 100%;
+
+  &::-webkit-scrollbar-thumb{
+    height: 200px;
+    border-radius: 3px;
+    background-color: #7fc5b6;
+  }
+
+  &::-webkit-scrollbar{
+    width:6px;
+  }
+
 }
