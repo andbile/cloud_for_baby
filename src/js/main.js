@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
     @@include('./mask_tel.js')
     @@include('./responsive_img.js')
     @@include('./block_scrolling.js')
+   /* @@include('./canvas.js')*/
 
 
     // select

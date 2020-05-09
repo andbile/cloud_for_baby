@@ -1,15 +1,16 @@
 @@include('./template/_page_head.html')
+@@include('./template/_preloader.html')
 <header class="main-header">
-    <!-- header (main nav menu) -->
     @@include('./template/_header.html')
 </header>
+
 <main data-is-scroll-block>
     <section class="index-full-view index-section-1" data-anchor="first">
 
         <div class="index-section-1__bg"></div>
-        <canvas id="animate_background_1">
+      <!--  <canvas id="animate_background_1">
 
-        </canvas>
+        </canvas>-->
 
         <div class="container index-section-1__wrp">
             <div class="index-section-1__logo block_img">
@@ -748,9 +749,9 @@
             </div>
         </div>
     </section>
+
+    @@include('./template/_overlay.html')
 </main>
-
-
 
 <footer class="main-footer" data-anchor="footer">
     <!-- footer -->

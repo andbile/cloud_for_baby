@@ -1,0 +1,41 @@
+.preloader{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+
+  background-color: #fff;
+  z-index: 100;
+}
+
+.preloader.loaded{
+  animation: fadeOut 2s ;
+}
+
+.preloader__logo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40vh;
+}
+
+.preloader__heart{
+  position: absolute;
+  width: 10%;
+  height: 10vh;
+  bottom: 10%;
+  animation: preloaderAnimation infinite 5s linear;
+}
+
+.preloader__heart--left{
+  left: 20%;
+  transform: translateX(-50%);
+}
+
+.preloader__heart--right{
+  right: 20%;
+  transform: translateX(50%);
+}
