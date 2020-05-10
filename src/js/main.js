@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
     @@include('./responsive_img.js')
     @@include('./block_scrolling.js')
     @@include('./modal.js')
+    @@include('./parallax.js')
 
    /* @@include('./canvas.js')*/
 

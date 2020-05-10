@@ -53,6 +53,13 @@ body{
   overflow: hidden;
 }
 
+@media (max-width: 576px) {
+  .index-full-view{
+    height: calc(100vh - 70px);
+  }
+}
+
+
 .scrollbar-enabled{
   overflow: auto;
   height: 100%;
@@ -66,5 +73,5 @@ body{
   &::-webkit-scrollbar{
     width:6px;
   }
-
 }
+
