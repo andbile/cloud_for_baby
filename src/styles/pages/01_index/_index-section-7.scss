@@ -2,7 +2,10 @@
   position: relative;
   padding-top: 5vh;
   padding-bottom: 5vh;
-  background: url("../img/bg_section_01.jpg") $bg-color-primary no-repeat center center;
+  background-image: url("../img/bg_section_01.jpg");
+  background-color: $bg-color-primary;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
 }
 
@@ -37,10 +40,14 @@
 .index-section-7__certificates{
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 
   .certificates__item{
-    width: 24%;
-    height: 15vw;
-    /*height: 307px;*/
+    flex: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33.33%;
+    height: 20vw;
+    text-align: center;
   }
 }

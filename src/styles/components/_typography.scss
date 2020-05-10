@@ -16,6 +16,13 @@ h1, h2, h3, h4, h5, h6{
   text-transform: uppercase;
 }
 
+@media (max-width: 768px){
+  .section-title{
+    font-size: 24px;
+  }
+}
+
+
 .section-title--bg{
   padding-left: 5px;
   padding-right: 5px;
@@ -35,6 +42,13 @@ h1, h2, h3, h4, h5, h6{
 .text-block{
   font-size: 18px;
   line-height: 24px;
+}
+
+@media (max-width: 768px){
+  .text-block{
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .text-block__link{

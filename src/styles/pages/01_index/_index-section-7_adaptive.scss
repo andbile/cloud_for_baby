@@ -1,0 +1,60 @@
+@media (max-width: 992px){
+  .index-section-7__logo{
+    display: none;
+  }
+
+  .index-section-7__col-left{
+    .text-block{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+
+
+}
+@media (max-width: 768px){
+  .index-section-7__wrp{
+    flex-direction: column;
+
+    .slogan__wrp{
+      order: 1;
+      width: 100%;
+      align-items: center;
+    }
+
+    .index-section-7__col-left{
+      order: 2;
+      width: 100%;
+    }
+
+  }
+
+  .index-section-7__certificates{
+    .certificates__item{
+      height: 30vw;
+    }
+  }
+
+}
+
+@media (max-width: 576px) {
+  .index-section-7{
+    background-image: none;
+  }
+
+  .index-section-7__col-left{
+    .text-block{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+
+
+}
+
+@media (max-width: 320px){
+
+}
+
