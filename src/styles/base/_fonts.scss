@@ -1,4 +1,53 @@
 //CenturyGothic
+
+@font-face {
+  font-family: "AvantGardeGothicC";
+  font-display: swap;
+  src: url("../fonts/AvantGardeGothicC.eot");
+  src: url("../fonts/AvantGardeGothicC.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/AvantGardeGothicC.woff2") format("woff2"),
+  url("../fonts/AvantGardeGothicC.woff") format("woff"),
+  url("../fonts/AvantGardeGothicC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvantGardeGothicC";
+  font-display: swap;
+  src: url("../fonts/AvantGardeGothicC-Demi.eot");
+  src: url("../fonts/AvantGardeGothicC-Demi.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/AvantGardeGothicC-Demi.woff2") format("woff2"),
+  url("../fonts/AvantGardeGothicC-Demi.woff") format("woff"),
+  url("../fonts/AvantGardeGothicC-Demi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvantGardeGothicC";
+  font-display: swap;
+  src: url("../fonts/AvantGardeGothicC-Bold.eot");
+  src: url("../fonts/AvantGardeGothicC-Bold.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/AvantGardeGothicC-Bold.woff2") format("woff2"),
+  url("../fonts/AvantGardeGothicC-Bold.woff") format("woff"),
+  url("../fonts/AvantGardeGothicC-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvantGardeGothicC";
+  font-display: swap;
+  src: url("../fonts/AvantGardeGothicC.eot");
+  src: url("../fonts/AvantGardeGothicC.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/AvantGardeGothicC.woff2") format("woff2"),
+  url("../fonts/AvantGardeGothicC.woff") format("woff"),
+  url("../fonts/AvantGardeGothicC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
 @font-face {
   font-family: 'AvantGardeGothicCTT';
   src: url('../fonts/AvantGardeGothicC-Bold.woff2') format('woff2'),

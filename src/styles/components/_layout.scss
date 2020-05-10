@@ -53,8 +53,20 @@ body{
   overflow: hidden;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px){
   .index-full-view{
+    height: auto;
+    overflow: visible;
+  }
+
+  .index-full-view--slide{
+    height: calc(100vh - 95px);
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+  .index-full-view--slide{
     height: calc(100vh - 70px);
   }
 }

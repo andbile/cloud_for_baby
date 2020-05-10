@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
     @@include('./modal.js')
     @@include('./parallax.js')
     @@include('./particlesjs.js')
+    @@include('./where-shop.js')
 
    /* @@include('./canvas.js')*/
 

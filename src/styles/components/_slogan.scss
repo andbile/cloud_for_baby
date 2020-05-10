@@ -5,13 +5,22 @@
 }
 
 .slogan__title{
+ /* font-family: Besom, sans-serif;
+  font-size: 36px;*/
+}
 
+.slogan__img{
+  height: 60px;
+  margin-bottom: 20px;
 }
 
 .slogan__text{
-  font-family: 'AvantGardeGothicCTT', sans-serif;
+  margin: 0 auto;
+
+  font-family: 'AvantGardeGothicC', sans-serif;
   font-size: 22px;
   line-height: 29px;
+  text-align: center;
 
   p{
     margin: 0;
@@ -29,3 +38,26 @@
     color: $bg-color-link--hover;
   }
 }
+
+@media (max-width: 992px){
+  .slogan__text{
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+@media (max-width: 768px){
+  .slogan__text{
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+
+
+}
+
+@media (max-width: 320px){
+
+}
+
