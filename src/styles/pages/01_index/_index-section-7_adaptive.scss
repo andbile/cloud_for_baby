@@ -1,6 +1,11 @@
 @media (max-width: 992px){
+  .index-section-7__wrp2{
+    flex-direction: column;
+  }
+
   .index-section-7__logo{
-    display: none;
+    margin-right: 0;
+    margin-bottom: 15px;
   }
 
   .index-section-7__col-left{
@@ -39,9 +44,6 @@
 }
 
 @media (max-width: 576px) {
-  .index-section-7{
-    background-image: none;
-  }
 
   .index-section-7__col-left{
     .text-block{
