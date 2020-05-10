@@ -3,14 +3,12 @@
     parallax();
 
     function parallax() {
-
         var $clouds = $('.index-section__bg-clouds');
-        console.log($clouds);
+        // базовый background-position у элемента, %
+        var baseX = 50;
+        var baseY = 100;
 
         $(document).on('mousemove', function (evt) {
-            var baseX = 50;
-            var baseY = 100;
-
             var shiftX = baseX - evt.clientX/200;
             var shiftY = baseY + evt.clientY/25;
 

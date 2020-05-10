@@ -1,16 +1,14 @@
 .index-section-1{
   position: relative;
-  background: url("../img/bg_figures.png") $bg-color-primary no-repeat center center;
-  background-size: cover;
+  background-color: #fff;
 }
 
-.index-section-1__bg{
+.particles-js{
   position: absolute;
+  width: 100%;
+  height: 100%;
   left: 0;
-  right: 0;
-  bottom: 0;
-  height: 50vh;
-  background: url("../img/clouds_01.png") no-repeat center 170%;
+  top: 0;
 }
 
 .index-section-1__wrp{
@@ -23,10 +21,10 @@
 }
 
 .index-section-1__logo{
-  margin-top: 15.0vh;
-  margin-bottom: 14.0vh;
+  margin-top: 12.0vh;
+  margin-bottom: 11.0vh;
   width: 319px;
-  height:29.3vh;
+  height:29vh;
   text-align: center;
 
   background: radial-gradient(ellipse at center, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%); ;
@@ -50,5 +48,43 @@
   height: 77px;
   width: 45px;
   background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 100%); ;
+}
+
+
+@media (max-width: 992px){
+
+}
+
+@media (max-width: 768px){
+  .index-section-1__logo{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    height: 25vh;
+  }
+
+  .index-section-1__text{
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .index-section-1__logo{
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+    height: 25vh;
+  }
+
+  .index-section-1__text{
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+}
+
+
+
+@media (max-width: 320px){
+
 }
 

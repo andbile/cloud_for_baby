@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
     @@include('./block_scrolling.js')
     @@include('./modal.js')
     @@include('./parallax.js')
+    @@include('./particlesjs.js')
 
    /* @@include('./canvas.js')*/
 
