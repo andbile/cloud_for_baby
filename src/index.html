@@ -5,7 +5,7 @@
 </header>
 
 <main data-is-scroll-block>
-    <section class="index-full-view index-full-view--slide index-section-1" data-anchor="first">
+    <section class="index-full-view index-full-view--slide index-section-1" data-anchor="first" id="first">
 
         <div id="particles-js1" class="particles-js"></div>
         <div id="particles-js2" class="particles-js"></div>
@@ -33,7 +33,7 @@
     </section>
 
 
-    <section class="index-full-view index-full-view--slide index-section-baby" data-anchor="baby1">
+    <section class="index-full-view index-full-view--slide index-section-baby" data-anchor="baby1" id="baby1">
         <!-- <div class="index-section-2__bg"></div>-->
         <div class="index-section__bg-clouds"></div>
 
@@ -62,7 +62,7 @@
     </section>
 
 
-    <section class="index-full-view index-full-view--slide index-section-baby" data-anchor="baby2">
+    <section class="index-full-view index-full-view--slide index-section-baby" data-anchor="baby2" id="baby2">
         <!--<div class="index-section-2__bg"></div>-->
         <div class="index-section__bg-clouds"></div>
 
@@ -98,7 +98,7 @@
     </section >
 
 
-    <section class="index-full-view index-full-view--slide index-section-baby" data-anchor="baby3-slider">
+    <section class="index-full-view index-full-view--slide index-section-baby" data-anchor="baby3-slider" id="baby3-slider">
         <!--<div class="index-section-2__bg"></div>-->
         <div class="index-section__bg-clouds"></div>
 
@@ -138,7 +138,7 @@
     </section>
 
 
-    <section class="index-full-view index-section-3" data-anchor="specifications">
+    <section class="index-full-view index-section-3" data-anchor="specifications" id="specifications">
 
 
         <div class="container">
@@ -302,7 +302,7 @@
     </section>
 
 
-    <section class="index-full-view index-section-4" data-anchor="baby-slider">
+    <section class="index-full-view index-section-4" data-anchor="baby-slider" id="baby-slider">
         <div class="container">
 
             <div class="section-title">
@@ -353,7 +353,7 @@
     </section>
 
 
-    <section class="index-full-view index-section-5" data-anchor="questions">
+    <section class="index-full-view index-section-5" data-anchor="questions" id="questions">
         <div class="container">
 
             <div class="index-section-5__wrp">
@@ -486,7 +486,7 @@
     </section>
 
 
-    <section class="index-full-view index-section-6" data-anchor="reviews">
+    <section class="index-full-view index-section-6" data-anchor="reviews" id="reviews">
         <div class="container">
 
             <div class="index-section-6__wrp">
@@ -501,12 +501,11 @@
                         поделиться своим опытом вы можете <a class="text-block__link" href="" target="_blank">тут.</a>
                     </div>
 
-                    <div class="index-section-6__slider slider-type-3">
+                    <div class="index-section-6__slider slide-item-wrp--reviews">
 
                         <div class="slider-items">
 
-
-                            <div class="slide-item slide-item--type-3">
+                            <div class="slide-item slide-item--reviews">
 
                                 <div class="slide-item__user">
                                     <div class="user__photo block_img-full" data-block-img--full="">
@@ -527,25 +526,14 @@
 
                         </div>
 
-                        <div class="slider-btn-wrp slider-btn-wrp--type-3">
+                        <div class="slider-btn-wrp slider-btn-wrp--reviews">
                             <span class="slider-btn slider-btn--prev icon icon-angle-left" data-prev></span>
                             <span class="slider-btn slider-btn--next icon icon-angle-right" data-next></span>
                         </div>
 
                     </div>
 
-                    <div class="index-section-6__wrp2">
 
-                        <div class="btns-block-text">Прочитать другие отзывы вы можете тут:</div>
-
-                        <div class="index-section-6__btns">
-                            <a class="btn btn-blue btn-type3" href="" target="_blank">otzovik.com</a>
-                            <a class="btn btn-blue btn-type3" href="" target="_blank">otzovik.com</a>
-                            <a class="btn btn-blue btn-type3" href="" target="_blank">irocomment.ru</a>
-                            <a class="btn btn-blue btn-type3" href="" target="_blank">vseotzyvy.ru</a>
-                        </div>
-
-                    </div>
 
                 </div>
 
@@ -559,12 +547,24 @@
                     </div>
                 </div>
             </div>
+            <div class="index-section-6__wrp2">
+
+                <div class="btns-block-text">Прочитать другие отзывы вы можете тут:</div>
+
+                <div class="index-section-6__btns">
+                    <a class="btn btn-blue btn-type3" href="" target="_blank">otzovik.com</a>
+                    <a class="btn btn-blue btn-type3" href="" target="_blank">otzovik.com</a>
+                    <a class="btn btn-blue btn-type3" href="" target="_blank">irocomment.ru</a>
+                    <a class="btn btn-blue btn-type3" href="" target="_blank">vseotzyvy.ru</a>
+                </div>
+
+            </div>
 
         </div>
     </section>
 
 
-    <section class="index-full-view index-section-7" data-anchor="about">
+    <section class="index-full-view index-section-7" data-anchor="about" id="about">
         <div class="container">
             <div class="index-section-7__wrp">
 
@@ -760,7 +760,7 @@
     @@include('./template/_overlay.html')
 </main>
 
-<footer class="main-footer" data-anchor="footer">
+<footer class="main-footer" data-anchor="footer" id="footer">
     <!-- footer -->
     @@include('./template/_footer.html')
 </footer>

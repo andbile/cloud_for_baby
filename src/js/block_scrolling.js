@@ -8,6 +8,7 @@
     // TODO TOP_SHIFT получать динамически из размера main-header
     var TOP_SHIFT = 95;
 
+
     var $sections = $('[data-anchor]');
 
     if(device.type === 'desktop' && $(window).width() >= WINDOW_WIDTH_MIN){
@@ -78,8 +79,7 @@
 
         // получаем якорь у текущего блока и устанавливаем ссылку
         var currentAnchor = $sections.eq(nextNode).data("anchor");
-
-        document.location.href = document.location.hostname +  '#' + currentAnchor;
+        document.location.hash = '#' + currentAnchor;
 
         // после перемотки включаем обработчики событий
         setTimeout(function () {
