@@ -46,7 +46,7 @@
 
         // определяем на каком слайде была перезагрузка страницы
         var fullHref = document.location.href;
-        var anchor = fullHref.slice(fullHref.indexOf('/#') + 2);
+        var anchor = fullHref.slice(fullHref.indexOf('#') + 1);
         var $currentNode = $sections.filter('[data-anchor="' + anchor + '"]');
 
         // удаляем пометки у слайдов и ставим на текущем активном (показанном)
@@ -78,7 +78,8 @@
 
         // получаем якорь у текущего блока и устанавливаем ссылку
         var currentAnchor = $sections.eq(nextNode).data("anchor");
-        document.location.href = '/#' + currentAnchor;
+
+        document.location.href = document.location.hostname +  '#' + currentAnchor;
 
         // после перемотки включаем обработчики событий
         setTimeout(function () {
