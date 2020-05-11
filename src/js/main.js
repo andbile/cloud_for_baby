@@ -10,6 +10,8 @@ jQuery(document).ready(function($) {
     @@include('./particlesjs.js')
     @@include('./where-shop.js')
     @@include('./sliders.js')
+    @@include('./answer.js')
+
 
    /* @@include('./canvas.js')*/
 
