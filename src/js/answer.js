@@ -24,7 +24,6 @@
         }
     }
 
-
     var $scrollContainer = $('.questions__items');
 
     $scrollContainer.on('mouseover', function () {
