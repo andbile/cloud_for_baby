@@ -4,12 +4,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  max-width: 1000px;
   min-width: 300px;
-  max-height: 750px;
-  height: 80vh;
-  width: 90%;
 
   border-radius: 5px;
   background-color: #ffffff;
@@ -84,17 +79,34 @@
 }
 
 
+// Модальные окна
+.modal-window--terms-of-use{
+  max-width: 1000px;
+  max-height: 750px;
+  height: 80vh;
+  width: 90%;
+}
+
+.modal-window--give--feedback{
+  width: 500px;
+  height: auto;
+}
+
+
+
 .modal-window[data-modal-target="terms-of-use"]{
   //display: block;
   //opacity: 1;
 }
+
+
 
 @media (max-width: 992px){
 
 }
 
 @media (max-width: 768px){
-  .modal-window {
+  .modal-window--terms-of-use {
     width: 85%;
   }
 
@@ -113,15 +125,28 @@
     }
   }
 
-  .modal-window__content-wrp{
-    padding: 20px;
-    padding-right: 10px;
-    height: calc(100% - 40px - 32px);
+  .modal-window--terms-of-use{
+    .modal-window__content-wrp{
+      padding: 20px;
+      padding-right: 10px;
+      height: calc(100% - 40px - 32px);
+    }
   }
+
+
+
+
 
 }
 
 @media (max-width: 576px) {
+  .modal-window--give--feedback{
+    width: 95%;
+
+    .modal-window__content-wrp{
+      padding: 15px;
+    }
+  }
 
 }
 

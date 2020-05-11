@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
     @@include('./parallax.js')
     @@include('./particlesjs.js')
     @@include('./where-shop.js')
+    @@include('./sliders.js')
 
    /* @@include('./canvas.js')*/
 

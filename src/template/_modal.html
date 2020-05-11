@@ -72,3 +72,49 @@
 
 
 </div>
+
+<div class="modal-window modal-window--give--feedback" data-modal-target="give-feedback">
+
+    <div class="modal-window__title-wrp">
+        <div class="modal-window__tittle">Оставить отзыв</div>
+        <div class="modal-window__btn-close icon icon-cancel" data-modal-close>Закрыть</div>
+    </div>
+    <div class="modal-window__content-wrp">
+        <form class="form form--modal" action="" method="post" name="send-feedback">
+
+            <div class="form__input--single">
+                <label><input type="text" name="name" placeholder="Введите имя" required></label>
+            </div>
+
+            <div class="form__input--double">
+                <label class="input-smaller"><input type="email" name="email" placeholder="Электронная почта" required></label>
+                <label class="input-bigger"><input type="text"  name="link" placeholder="Ссылка на Ваш профиль ВК или FB"></label>
+            </div>
+
+            <div class="form__input--single">
+                <label>
+                    <textarea name="text" cols="" rows="4" placeholder="Введите текст отзыва" required></textarea>
+                </label>
+            </div>
+
+            <div class="form__input--double">
+                <label class="input-file" for="select-question__file">Прикрепить файл
+                    <input type="file" name="file" placeholder="Прикрепить файл" id="select-question__file">
+                </label>
+                <label class="btn btn-submit">
+                    <input type="submit" name="send-form" value="отправить">
+                </label>
+            </div>
+
+            <div class="form__checkbox--consent">
+                <div class="switch-checkbox__wrp">
+                    <input id="switch-checkbox-2" type="checkbox" name="consent" value="yes" required>
+                    <label for="switch-checkbox-2" class="switch-checkbox">
+                        Я даю свое согласие на обработку персональных данных
+                    </label>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -15,40 +15,38 @@
 
 .index-section-6__col-left{
   width: 66%;
-
-
   .section-title{
     margin-bottom: 5vh;
   }
 
   .text-block{
     text-align: center;
+    margin-bottom: 20px;
   }
 }
 
-.slider-type-3{
+.slide-item-wrp--reviews{
   position: relative;
   padding-left: 30px;
   padding-right: 30px;
+  margin-bottom: 20px;
 }
 
-.slide-item--type-3{
+.slide-item--reviews{
   position: relative;
-  height: 30.0vw;
-  padding-top: 9%;
+  height: 342px;
+  padding-top: 50px;
   padding-left: 11%;
-  background: url("../img/bg_slider_type-3.png") no-repeat center top;
-  background-size: contain;
 
+  background-image: url("../img/bg_slider_type-3-2.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
   .slide-item__user{
     display: flex;
     position: relative;
     margin-bottom: 3%;
     width: 70%;
-   /* top: 13%;
-    left: 12%;*/
-
   }
 
   .user__photo{
@@ -64,7 +62,7 @@
     align-self: center;
     padding-left: 20px;
 
-    font-family: 'AvantGardeGothicCTT', sans-serif;
+    font-family: 'AvantGardeGothicC', sans-serif;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
@@ -78,6 +76,9 @@
   .user__text{
     font-size: 16px;
     line-height: 24px;
+    margin-bottom: 20px;
+    height: 70px;
+    overflow: hidden;
   }
 
   .slide-item__ink{
@@ -85,11 +86,15 @@
     text-align: right;
 
     a{
-      font-family: 'AvantGardeGothicCTT', sans-serif;
+      font-family: 'AvantGardeGothicC', sans-serif;
       font-size: 14px;
       text-decoration: underline;
       color: #00aeff;
       transition: color 0.4s;
+    }
+
+    a:first-child{
+      margin-right: 10px;
     }
 
     a:hover{
@@ -98,7 +103,9 @@
   }
 }
 
-.slider-btn-wrp--type-3{
+
+//
+.slider-btn-wrp--reviews{
   position: absolute;
   top: 50%;
   left: 0;
@@ -108,8 +115,6 @@
   .slider-btn{
     position: absolute;
     cursor: pointer;
-
-
 
     &:before{
       font-size: 70px;
@@ -133,6 +138,9 @@
   }
 }
 
+
+
+// блок с кнопками
 .index-section-6__wrp2{
   padding-top: 2vh;
 
@@ -142,17 +150,19 @@
     font-size: 18px;
     font-weight: bold;
   }
+}
 
-  .index-section-6__btns{
+.index-section-6__btns{
+  display: flex;
+  flex-wrap: wrap;
 
-    a{
-      margin-right: 15px;
-    }
+  a{
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
 
-    a:last-child{
-      margin-right: 0;
-    }
-
+  a:last-child{
+    margin-right: 0;
   }
 
 }

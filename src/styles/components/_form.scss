@@ -1,0 +1,167 @@
+.form{
+
+  input, textarea{
+    padding: 6px 15px;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+
+    font-size: 12px;
+    line-height: 18px;
+
+    background-color: #fff;
+    outline: none;
+  }
+
+  input::placeholder,
+  textarea::placeholder{
+    color: #dedede;
+  }
+
+  textarea{
+    resize: none;
+    width: 100%;
+  }
+
+  label.input-file{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+
+    background-color: #fff;
+
+    text-align: center;
+    font-size: 12px;
+    line-height: 19px;
+
+    cursor: pointer;
+
+    input{
+      display: none;
+    }
+  }
+
+}
+
+.form__input--single{
+  margin-bottom: 10px;
+
+  input, label{
+    width: 100%;
+  }
+}
+
+.form__input--double{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  label{
+    width: calc(1/2*100% - (1 - 1/2)*10px);
+    line-height: 18px;
+  }
+
+  label:first-child{
+    margin-right: 10px;
+  }
+
+  input{
+    width: 100%;
+  }
+}
+
+.form__select--single{
+  margin-bottom: 10px;
+}
+
+.form__checkbox--consent{
+  display: flex;
+  align-items: center;
+}
+
+.switch-checkbox__wrp{
+  width: 100%;
+
+  input{
+    display: none;
+  }
+
+  input:checked + .switch-checkbox:before {
+    background-color: #219653;
+  }
+
+  input:checked + .switch-checkbox:after{
+    left: calc(45px - 18px - 2px);
+  }
+}
+
+.switch-checkbox{
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 22px;
+  padding-left: 55px;
+
+  font-size: 10px;
+  line-height: 12px;
+  cursor: pointer;
+
+  &:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 22px;
+
+    border-radius: 11px;
+    background-color: #BDBDBD;
+    transition: background-color 0.4s;
+  }
+
+  &:after{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 2px;
+    left: 2px;
+
+    border-radius: 50%;
+    background-color: white;
+    transition: left 0.4s;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.06), 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+
+
+}
+
+// Форма в модальном окне
+.form--modal{
+  input, textarea{
+    padding: 15px 15px;
+    border: 2px solid #dedede;
+  }
+
+  input::placeholder,
+  textarea::placeholder{
+    color: #000000;
+  }
+
+  .form__input--single, .form__input--double{
+    margin-bottom: 20px;
+  }
+
+  .input-smaller{
+    flex: 0 1 40%;
+  }
+
+  .input-bigger{
+    flex-grow: 1;
+  }
+
+  label.input-file{
+    border: 2px solid #dedede;
+  }
+}
+
