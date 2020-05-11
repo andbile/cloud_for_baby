@@ -87,3 +87,9 @@ body{
   }
 }
 
+.scrollbar-enabled--10{
+  &::-webkit-scrollbar{
+    width:10px;
+  }
+}
+

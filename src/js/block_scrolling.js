@@ -8,14 +8,18 @@
     // TODO TOP_SHIFT получать динамически из размера main-header
     var TOP_SHIFT = 95;
 
+    window.enableScroll = enableScroll;
+    window.disableScroll = disableScroll;
+    window.WINDOW_WIDTH_MIN = WINDOW_WIDTH_MIN;
+
 
     var $sections = $('[data-anchor]');
 
     if(device.type === 'desktop' && $(window).width() >= WINDOW_WIDTH_MIN){
         // включение прокрутки
-        enable();
+        enableScroll();
     }else{
-        disable();
+        disableScroll();
     }
 
     // при ресайзе, сбрасываем все настройки по умолчанию
@@ -24,9 +28,9 @@
         setTimeout(function () {
             if(!isEventResize){
                 if(device.type === 'desktop' && $(window).width() >= WINDOW_WIDTH_MIN) {
-                    enable();
+                    enableScroll();
                 }
-                else disable();
+                else disableScroll();
                 isEventResize = true;
             }
         },500);
@@ -34,7 +38,7 @@
     });
 
     // отключаем прокрутку по секциям и возвращаем установки
-    function disable() {
+    function disableScroll() {
         $('body').css({'overflow' : 'visible'});
         
         window.removeEventListener('keydown', windowScrollHandler);
@@ -42,7 +46,7 @@
     }
 
     // включение прокрутки
-    function enable() {
+    function enableScroll() {
         $('body').css({'overflow' : 'hidden'});
 
         // определяем на каком слайде была перезагрузка страницы
