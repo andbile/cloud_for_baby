@@ -13,7 +13,7 @@
         setTimeout(function () {
             // включаем переход по ссылкам
             $shopsIitemLinks.unbind('click');
-        },100)
+        },50)
     });
 
     $shopsIitems.on('mouseout', function () {
