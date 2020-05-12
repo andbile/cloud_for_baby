@@ -11,9 +11,11 @@ jQuery(document).ready(function($) {
     @@include('./where-shop.js')
     @@include('./sliders.js')
     @@include('./answer.js')
+    @@include('./specification.js')
 
 
    /* @@include('./canvas.js')*/
+
 
 
     // select

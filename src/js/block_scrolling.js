@@ -125,4 +125,53 @@
         $sections.removeClass('active');
         $sections.eq(index).addClass('active');
     }
+
+
+    /*var fullPage = $('#fullpage').fullpage({
+        sectionSelector: '.index-full-view',
+         scrollBar:true,
+        autoScrolling:true,
+        // scrollHorizontally: true,
+        anchors: ['first', 'baby1', 'baby2', 'baby3-slider', 'specifications', 'baby-slider', 'questions', 'reviews', 'about', 'where-buy', 'footer'],
+        afterLoad: function(origin, destination, direction){
+            // Nav scroll
+            if ($(window).width() > 767) {
+                setTimeout(function() {
+                    if ($('body').hasClass('fp-viewing-section-1')) {
+                        $('.header').removeClass('js-header-fixed');
+                    } else {
+                        $('.header').addClass('js-header-fixed');
+                    }
+                }, 50);
+            }
+            if ($('body').hasClass('fp-viewing-section-3') || $('body').hasClass('fp-viewing-section-4')) {
+                $('.step-2').addClass('js-active');
+            } else {
+                // $('.step-2').removeClass('js-active');
+            }
+
+            if ($('body').hasClass('fp-viewing-section-4')) {
+                $('.step-3').addClass('js-active');
+            } else {
+                $('.step-3').removeClass('js-active');
+            }
+
+            if ($('body').hasClass('fp-viewing-section-2') || $('body').hasClass('fp-viewing-section-3') || $('body').hasClass('fp-viewing-section-4')) {
+                $('.step-1 .steps__img').addClass('js-active');
+            }
+
+            if ($('body').hasClass('fp-viewing-section-2') || $('body').hasClass('fp-viewing-section-3') || $('body').hasClass('fp-viewing-section-4')) {
+            } else {
+                $('.step-1 .steps__img').removeClass('js-active');
+            }
+
+            /!*if ($('body').hasClass('fp-viewing-section-1') || $('body').hasClass('fp-viewing-section-2') || $('body').hasClass('fp-viewing-section-3') || $('body').hasClass('fp-viewing-section-4')) {
+               $('.img-sky').removeClass('js-active');
+            } else {
+               $('.img-sky').addClass('js-active');
+            }*!/
+        },
+
+    });*/
+
 })();

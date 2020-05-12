@@ -416,10 +416,10 @@
 
 
     // Анимация - первый блок
-   // particlesJS('particles-js1', particles1);
-   // particlesJS('particles-js2', particles2);
-   // particlesJS('particles-js3', particles3);
-   // particlesJS('particles-js4', particles4);
+    //particlesJS('particles-js1', particles1);
+    //particlesJS('particles-js2', particles2);
+    //particlesJS('particles-js3', particles3);
+    //particlesJS('particles-js4', particles4);
 
 
     // TODO отключить после промотки

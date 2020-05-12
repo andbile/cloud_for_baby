@@ -8,15 +8,14 @@
         var $modalWindows = $('.modal-window');
 
         // отключение прокрутки document если навели на модальное окно
-   /*     $modalWindows.on('mouseover', function () {
+     /*$modalWindows.on('mouseover', function () {
             disableScroll();
             $('body').css({'overflow' : 'hidden'});
         });
 
         $modalWindows.on('mouseout', function () {
             enableScroll();
-        });
-*/
+        }); */
 
 
         // коллекция ссылок при нажатии на которые открываются модальные окна

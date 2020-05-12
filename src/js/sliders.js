@@ -1,7 +1,5 @@
 (function () {
 
-
-
     // слайдер - ОТЗЫВЫ О НАШЕЙ ПРОДУКЦИИ
     $('[data-slider-slick-01]').slick({
         speed: 1000,
@@ -21,6 +19,5 @@
         prevArrow: $('.index-section-4__slider .slider-btn--prev'),
         nextArrow: $('.index-section-4__slider .slider-btn--next')
     });
-2
 
 })();

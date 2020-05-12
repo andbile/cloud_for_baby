@@ -14,9 +14,6 @@
         setHeight();
 
 
-
-
-
         // при ресайзе, сбрасываем все настройки по умолчанию
         var isEventResize = false;
         $(window).resize(function() {
@@ -37,6 +34,7 @@
             //$headerNode.addClass("fixed");
         }
 
+        // TODO вернуть высоту в глобальную область
         function setHeight() {
             var heightHeaderNode = Math.round($headerNode.innerHeight());
             $parentNode.innerHeight(heightHeaderNode);
@@ -65,7 +63,6 @@
     $btnClose.on('click', function () {
         $overlay.removeClass('active');
         $overlay.addClass('active--fadeout');
-        console.log($overlay);
         TweenMax.to($popupMenu, 0.5, {delay:0.3, right: '-500px', opacity: 0, onComplete: function () {
                 $popupMenu.toggleClass('active');
                 $overlay.removeClass('active--fadeout');
