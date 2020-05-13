@@ -36,8 +36,8 @@ const path = {
         js: 'src/js/main.js',
         copy_img: ['src/img/**/*.*', '!src/img/sprite_png/**', '!src/img/sprite_svg/**'],
         copy_font: 'src/fonts/*.*',
-        copy_lib: 'src/libs/*.*',
-        copy_files: ['src/libs/*.*', 'src/fonts/*.*'/*, 'src/img/!**!/!*.*', '!src/img/sprite_png/!**', '!src/img/sprite_svg/!**'*/]
+        copy_lib: 'src/libs/**/*.*',
+        copy_files: ['src/libs/**/*.*', 'src/fonts/*.*'/*, 'src/img/!**!/!*.*', '!src/img/sprite_png/!**', '!src/img/sprite_svg/!**'*/]
 
     },
     // watching files
@@ -108,15 +108,15 @@ gulp.task('copyFiles', function () {
 });
 
 
-var newPath;
+var newPathImg;
 gulp.task('copyImg', function () {
     return gulp.src(path.src.copy_img)
         .on('data', function (file) {
             let path  = file.base;
-            newPath = path.replace('src', 'build');
+            newPathImg = path.replace('src', 'build');
         })
 
-        .pipe(changed(newPath + '', {hasChanged: changed.compareLastModifiedTime}))
+        .pipe(changed(newPathImg + '', {hasChanged: changed.compareLastModifiedTime}))
 
         .pipe(imagemin([
             imagemin.gifsicle({interlaced: true}),
@@ -148,13 +148,19 @@ gulp.task('copyFont', function () {
         }));
 });
 
+//var newPathLibs;
 gulp.task('copyLib', function () {
     return gulp.src(path.src.copy_lib)
-        .pipe(gulp.dest(function(file){
+        /*.on('data', function (file) {
             let path  = file.base;
-            console.log(path);
-            return path.replace('src', 'build');
-        }));
+            newPathLibs = path.replace('src', 'build');
+        })*/
+
+        .pipe(gulp.dest(function(file){
+        let path  = file.base;
+        console.log(path);
+        return path.replace('src', 'build');
+    }));
 });
 
 
