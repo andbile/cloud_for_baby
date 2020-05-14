@@ -12,6 +12,7 @@ jQuery(document).ready(function($) {
     @@include('./sliders.js')
     @@include('./answer.js')
     @@include('./specification.js')
+    @@include('./animationBaby.js')
 
 
    /* @@include('./canvas.js')*/

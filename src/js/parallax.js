@@ -3,7 +3,9 @@
     parallax();
 
     function parallax() {
-        var $clouds = $('.index-section__bg-clouds');
+        var $clouds = $('.index-section__baby-bg-bottom-img-1');
+        var $houses = $('.index-section__baby-bg-bottom-img-2');
+        console.log();
         // базовый background-position у элемента, %
         var baseX = 50;
         var baseY = 100;
@@ -15,6 +17,7 @@
             var str = shiftX + '%' + ' ' + shiftY + '%';
 
             $clouds.css('background-position', str);
+            $houses.css('background-position', str);
         });
     }
 })();

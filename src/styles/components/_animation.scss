@@ -28,3 +28,18 @@
     opacity: 0;
   }
 }
+
+@keyframes airplane{
+  0%{
+    left: 0;
+    top: 50px;
+  }
+  50%{
+    left: -100px;
+    top: 40%;
+  }
+  100%{
+    left: 0;
+    top: 50px;
+  }
+}

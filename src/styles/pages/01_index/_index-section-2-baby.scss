@@ -1,8 +1,10 @@
+// стили для всех блоков с детьми
 .index-section-baby{
   position: relative;
-  /*background: url("../img/bg_white_blanket.jpg") $bg-color-primary no-repeat center center;
-  background-size: contain;*/
-  background: url("../img/bg_blanket.jpg") no-repeat center center;
+  background-image: url("../img/bg_white_blanket_and_stars.jpg");
+  background-color: $bg-color-primary;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
 
   .container, .index-section-baby__wrp{
@@ -16,67 +18,86 @@
 }
 
 
-/*.index-section-baby__bg-clouds{
+
+// слайдер на 3-м слайде
+.index-section-baby__slick-slider, .index-section-baby__slider-item{
+  position: relative;
+  height: calc(100vh - 95px);
+}
+.index-section-baby__slick-slider{
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .index-section-baby__slick-slider, .index-section-baby__slider-item{
+    height: calc(100vh - 70px);
+  }
+}
+
+.index-section-baby__slider-item{
+  background-color: $bg-color-primary;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+// облака
+.index-section__baby-bg-bottom-img-1, .index-section__baby-bg-bottom-img-2{
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -85px;
   height: 50vh;
-  background: url("../img/clouds_01.png") no-repeat center bottom;
-  z-index: 5;
-}*/
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
 
-.index-section-baby__pillow-img{
+.index-section__baby-bg-bottom-img-1{
+  bottom: -85px;
+  z-index: 13;
+}
+
+.index-section__baby-bg-bottom-img-2{
+  bottom: -10px;
+  z-index: 4;
+}
+
+.index-section__baby-something{
   position: absolute;
-  width: 35%;
-  height: 260px;
-  top: 0;
-  left: 80px
-}
-
-.index-section-baby__pillow-img--h1{
-  top: -190px;
-}
-
-.index-section-baby__pillow-img--h2{
-  top: 40px;
-}
-
-
-.index-section-baby__blanket-img{
-  position: absolute;
-  width: 45%;
-  //height: 330px;
-  bottom: -300px;
-  left: 80px;
-  z-index: 2;
-
-}
-
-.index-section-baby__blanket-img--h2{
-  bottom: -210px;
-}
-
-
-
-
-.index-section-baby__baby-img{
-  position: absolute;
-  width: 48%;
-  height: 70vh;
-  top: 12vh;
-}
-
-.index-section-baby__content{
-  position: absolute;
-  width: 42%;
-  top: 20vh;
+  height: 100%;
   right: 0;
-  padding: 35px;
-  border-radius: 5px;
+  width: 50%;
+  z-index: 3;
 
-  background-color: #fff;
-  box-shadow: 0 6px 28px 2px rgba(0, 0, 0, 0.2);
+  img{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    animation: airplane infinite 7s linear;
+  }
+}
+
+.index-section-baby__wrp{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+// текстовый блок
+.index-section-baby__content{
+  position: relative;
+  flex: none;
+  align-self: center;
+  width: 42%;
+  padding-left: 10px;
+  z-index: 12;
+
+  &>div{
+    border-radius: 5px;
+    padding: 35px;
+    background-color: #fff;
+    box-shadow: 0 6px 28px 2px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .index-section-baby__title{
@@ -87,7 +108,54 @@
 }
 
 .index-section-baby__text{
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+
+
+
+
+
+//  ----- ребёнок
+.index-section-baby__baby-wrp{
+  position: relative;
+  flex: none;
+  align-self: center;
+  width: 480px;
+  height: 68vh;
+  max-height: 60vh;
+  z-index: 10;
+ }
+
+.index-section-baby__baby-img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  z-index: 11;
+}
+
+// подушка
+.index-section-baby__pillow-img{
+  position: absolute;
+  width:80%;
+  height: 260px;
+  top: -1000px;
+  //left: 80px;
+  left: 40%;
+  transform: translateX(-50%) rotate(-10deg);
+  z-index: 10;
+}
+// одеяло
+.index-section-baby__blanket-img{
+  position: absolute;
+  width: 95%;
+  bottom: -1000px;
+  left: 60%;
+  transform: translateX(-50%) rotate(-10deg);
+  //left: 80px;
+  z-index: 12;
+
 }
 
