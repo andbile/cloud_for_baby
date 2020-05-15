@@ -16,6 +16,7 @@
         //autoplay: true,
         //autoplaySpeed: 4000,
         dots:false,
+        infinite: false,
         prevArrow: $('.index-section-4__slider .slider-btn--prev'),
         nextArrow: $('.index-section-4__slider .slider-btn--next')
     });

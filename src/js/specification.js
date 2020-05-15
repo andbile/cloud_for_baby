@@ -162,7 +162,7 @@
         $('[data-target-spec-current="5"] .slide-specifications__photo-preview-items').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
-            asNavFor: $('[data-target-spec-current="1"] .slide-specifications__photo-full-wrp'),
+            asNavFor: $('[data-target-spec-current="5"] .slide-specifications__photo-full-wrp'),
             dots: false,
             focusOnSelect: true,
             arrows: false,
@@ -203,7 +203,7 @@
         $('[data-target-spec-current="9"] .slide-specifications__photo-preview-items').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
-            asNavFor: $('[data-target-spec-current="1"] .slide-specifications__photo-full-wrp'),
+            asNavFor: $('[data-target-spec-current="9"] .slide-specifications__photo-full-wrp'),
             dots: false,
             focusOnSelect: true,
             arrows: false,
@@ -221,6 +221,102 @@
         });
     }
 
+
+
+
+
+    if($( window ).width() > 576){
+        $('[data-target-spec-current="13"] .slide-specifications__photo-full-wrp').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            asNavFor: $('[data-target-spec-current="13"] .slide-specifications__photo-preview-items'),
+            prevArrow: $('[data-target-spec-current="13"] .slide-specifications__photo-preview-btns .icon-angle-left'),
+            nextArrow: $('[data-target-spec-current="13"] .slide-specifications__photo-preview-btns .icon-angle-right'),
+            responsive: [
+                {
+                    breakpoint: 576, //
+                    settings: {
+                        dots:true,
+                        nav:false
+                    }
+                }
+            ]
+        });
+
+        $('[data-target-spec-current="13"] .slide-specifications__photo-preview-items').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: $('[data-target-spec-current="13"] .slide-specifications__photo-full-wrp'),
+            dots: false,
+            focusOnSelect: true,
+            arrows: false,
+            infinite: false,
+        });
+
+    }else{
+        $('[data-target-spec-current="13"] .slide-specifications__photo-full-wrp').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            dots:true,
+            nav: false,
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    if($( window ).width() > 576){
+        $('[data-target-spec-current="17"] .slide-specifications__photo-full-wrp').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            asNavFor: $('[data-target-spec-current="17"] .slide-specifications__photo-preview-items'),
+            prevArrow: $('[data-target-spec-current="17"] .slide-specifications__photo-preview-btns .icon-angle-left'),
+            nextArrow: $('[data-target-spec-current="17"] .slide-specifications__photo-preview-btns .icon-angle-right'),
+            responsive: [
+                {
+                    breakpoint: 576, //
+                    settings: {
+                        dots:true,
+                        nav:false
+                    }
+                }
+            ]
+        });
+
+        $('[data-target-spec-current="17"] .slide-specifications__photo-preview-items').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: $('[data-target-spec-current="17"] .slide-specifications__photo-full-wrp'),
+            dots: false,
+            focusOnSelect: true,
+            arrows: false,
+            infinite: false,
+        });
+
+    }else{
+        $('[data-target-spec-current="17"] .slide-specifications__photo-full-wrp').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            dots:true,
+            nav: false,
+        });
+    }
 
 
 
@@ -247,6 +343,7 @@
             slidesToScroll: 1,
             arrows: true,
             fade: true,
+            swipe: false,
             prevArrow: $leftBtn,
             nextArrow: $rightBtn,
         });
