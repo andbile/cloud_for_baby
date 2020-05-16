@@ -204,3 +204,24 @@
   }
 }
 
+@media (max-width: 576px){
+    .slider-btn--full-slider{
+      font-size: 11px;
+      width: 140px;
+
+      &.slider-btn--prev{
+        padding-left: 24px;
+      }
+
+      &.slider-btn--next{
+        padding-right: 26px;
+      }
+
+    }
+
+    .icon:before{
+      font-size: 24px;
+    }
+}
+
+

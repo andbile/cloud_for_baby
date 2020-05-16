@@ -1,7 +1,7 @@
 @media (max-width: 1650px){
   .index-section-3{
 
-    .slider-btn--specifications.full{
+    [data-full-slider-btn-left--spec], [data-full-slider-btn-right--spec]{
       display: none;
     }
   }
@@ -87,17 +87,6 @@
     padding-bottom: 5px;
   }
 
-  .slide-specifications__btn-wrp.response {
-
-    .slider-btn--specifications{
-      font-size: 11px;
-      width: 160px;
-    }
-
-    .icon:before{
-      font-size: 30px;
-    }
-  }
 
 
   .slide-specifications__btns{

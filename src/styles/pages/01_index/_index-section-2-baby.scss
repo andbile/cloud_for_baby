@@ -28,11 +28,7 @@
   width: 100%;
 }
 
-@media (max-width: 576px) {
-  .index-section-baby__slick-slider, .index-section-baby__slider-item{
-    height: calc(100vh - 70px);
-  }
-}
+
 
 .index-section-baby__slider-item{
   background-color: $bg-color-primary;

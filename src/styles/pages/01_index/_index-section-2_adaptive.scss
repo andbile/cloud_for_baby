@@ -57,9 +57,31 @@
 
 }
 
+@media (max-width: 576px) {
+  .index-section-baby__slick-slider, .index-section-baby__slider-item{
+    height: calc(100vh - 70px);
+  }
+
+
+}
+
+
 @media (max-width: 500px) {
   .index-section-baby__baby-wrp{
     width: 100%;
+  }
+
+  .index-section-baby__slider{
+
+    .slider-btn--full-slider.slider-btn--prev{
+      left: 10px;
+    }
+
+    .slider-btn--full-slider.slider-btn--next{
+      right: 10px;
+    }
+
+
   }
 
 

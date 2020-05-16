@@ -1,64 +1,69 @@
 (function () {
 
 
-    // слайдер в разделе спецификации
-    var $specificationsNavBtns = $('[data-target-spec]');
-    var $specificationsContents = $('[data-target-spec-current]');
+    // cлайдер - ассортимент
+    var $slickSlider_specItems = $('[data-slick-slider--spec-items]');
+    // внутренние слайдеры (показ фото)
+    var $slickSliders_specPhotos = $('[data-slick-slider--spec-photos]');
 
-    $specificationsNavBtns.on('click', showSpecificationsContent);
+    // инициализация основного слайдера
+    mainRangeSlider();
 
-    function showSpecificationsContent(evt) {
-        var attr = $(this).data('target-spec');
+    // при ресайзе, заново инициализируем слайдер, для переключения кнопок
+    var isEventResizeImg = false;
+    $(window).resize(function() {
 
-        // отключаем текущий слайдер
-        // ищем текущую показанные характеристики
-        var $currentContent = $specificationsContents.filter('.active');
-        // отключаем слайдер
-        disableSlider($currentContent);
+        setTimeout(function () {
+            if(!isEventResizeImg){
+                $slickSlider_specItems.slick('unslick');
+                mainRangeSlider();
+                isEventResizeImg = true;
+            }
+        },500);
+        isEventResizeImg = false;
+    });
 
 
-        // отобразим характеристики
-        var $newContentNode = getNewContent(attr);
-        show($newContentNode, $(this));
+    // инициализируем слайды
+    function mainRangeSlider(){
 
-    }
+        var $leftBtn;
+        var $rightBtn;
 
-    function getNewContent(dataAttr) {
-        if(dataAttr){
-            var selector = '[data-target-spec-current="' + dataAttr + '"]';
-            return  $specificationsContents.filter(selector);
-        }
-    }
-
-    function show(node, $btn) {
-        $specificationsNavBtns.removeClass('active');
-        $specificationsContents.removeClass('active');
-
-        node.addClass("active");
-        $btn.addClass('active');
-
-        enableSlider(node);
-    }
-
-    function disableSlider($currentContent) {
-        var $slider = $currentContent.find('.slide-specifications__photo-full-wrp');
-        var $previewSlider = $currentContent.find('.slide-specifications__photo-preview-items');
-
-        if($( window ).width() > 576){
-
-            if($slider.is('.slick-initialized')) $slider.slick('unslick');
-            if($previewSlider.is('.slick-initialized')) $previewSlider.slick('unslick');
-
+        // переключения разных кнопок для одного слайдера
+        if($(window).width() > 1650){
+            $leftBtn = $('[data-full-slider-btn-left--spec]');
+            $rightBtn = $('[data-full-slider-btn-right--spec]');
         }else{
-            if($slider.is('.slick-initialized')) $slider.slick('unslick');
+            $leftBtn = $('[data-full-slider-btn-left--spec-adaptive]');
+            $rightBtn = $('[data-full-slider-btn-right--spec-adaptive]');
         }
+
+        // слайдер для всех спецификаций
+        $slickSlider_specItems.slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            swipe: false,
+            prevArrow: $leftBtn,
+            nextArrow: $rightBtn,
+        });
+
+        // инициализируем первые внутренние слайды (показ фото)
+        // с задержкой из-за глюков
+        disableSliders($slickSliders_specPhotos);
+        setTimeout(function () {
+            enableSlider($slickSliders_specPhotos);
+        }, 0);
     }
 
-    function enableSlider($newContentNode) {
-        var $slider = $newContentNode.find('.slide-specifications__photo-full-wrp');
-        var $previewSlider = $newContentNode.find('.slide-specifications__photo-preview-items');
-        var $leftBtn = $newContentNode.find('.icon-angle-left');
-        var $rightBtn = $newContentNode.find('.icon-angle-right');
+    function enableSlider($slideNode) {
+        // слайдер -- привьюшки + кнопки
+        var $slider = $slideNode.find('.slide-specifications__photo-full-wrp');
+        var $previewSlider = $slideNode.find('.slide-specifications__photo-preview-items');
+        var $leftBtn = $slideNode.find('.icon-angle-left');
+        var $rightBtn = $slideNode.find('.icon-angle-right');
 
         // при ширине экрана больше 576 покажем слайдер и привьюшкми
         if($( window ).width() > 576){
@@ -93,273 +98,58 @@
         }
     }
 
+    // отключаем внутренние слайдеры (показ фото)
+    function disableSliders($currentContent) {
+        var $slider = $currentContent.find('.slide-specifications__photo-full-wrp');
+        var $previewSlider = $currentContent.find('.slide-specifications__photo-preview-items');
 
-    console.log($( window ).width());
-    // TODO циклом искать все первый блоки и активировать
+        if($( window ).width() > 576){
 
-    // подключаем слайдер в первом блоке контента, остальные при нажатии на кнопки меню
-    if($( window ).width() > 576){
-        $('[data-target-spec-current="1"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            asNavFor: $('[data-target-spec-current="1"] .slide-specifications__photo-preview-items'),
-            prevArrow: $('[data-target-spec-current="1"] .slide-specifications__photo-preview-btns .icon-angle-left'),
-            nextArrow: $('[data-target-spec-current="1"] .slide-specifications__photo-preview-btns .icon-angle-right'),
-            responsive: [
-                {
-                    breakpoint: 576, //
-                    settings: {
-                        dots:true,
-                        nav:false
-                    }
-                }
-            ]
-        });
+            if($slider.is('.slick-initialized')) $slider.slick('unslick');
+            if($previewSlider.is('.slick-initialized')) $previewSlider.slick('unslick');
 
-        $('[data-target-spec-current="1"] .slide-specifications__photo-preview-items').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: $('[data-target-spec-current="1"] .slide-specifications__photo-full-wrp'),
-            dots: false,
-            focusOnSelect: true,
-            arrows: false,
-            infinite: false,
-        });
-
-    }else{
-        $('[data-target-spec-current="1"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            dots:true,
-            nav: false,
-        });
-    }
-
-    if($( window ).width() > 576){
-        $('[data-target-spec-current="5"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            asNavFor: $('[data-target-spec-current="5"] .slide-specifications__photo-preview-items'),
-            prevArrow: $('[data-target-spec-current="5"] .slide-specifications__photo-preview-btns .icon-angle-left'),
-            nextArrow: $('[data-target-spec-current="5"] .slide-specifications__photo-preview-btns .icon-angle-right'),
-            responsive: [
-                {
-                    breakpoint: 576, //
-                    settings: {
-                        dots:true,
-                        nav:false
-                    }
-                }
-            ]
-        });
-
-        $('[data-target-spec-current="5"] .slide-specifications__photo-preview-items').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: $('[data-target-spec-current="5"] .slide-specifications__photo-full-wrp'),
-            dots: false,
-            focusOnSelect: true,
-            arrows: false,
-            infinite: false,
-        });
-
-    }else{
-        $('[data-target-spec-current="5"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            dots:true,
-            nav: false,
-        });
-    }
-
-    if($( window ).width() > 576){
-        $('[data-target-spec-current="9"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            asNavFor: $('[data-target-spec-current="9"] .slide-specifications__photo-preview-items'),
-            prevArrow: $('[data-target-spec-current="9"] .slide-specifications__photo-preview-btns .icon-angle-left'),
-            nextArrow: $('[data-target-spec-current="9"] .slide-specifications__photo-preview-btns .icon-angle-right'),
-            responsive: [
-                {
-                    breakpoint: 576, //
-                    settings: {
-                        dots:true,
-                        nav:false
-                    }
-                }
-            ]
-        });
-
-        $('[data-target-spec-current="9"] .slide-specifications__photo-preview-items').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: $('[data-target-spec-current="9"] .slide-specifications__photo-full-wrp'),
-            dots: false,
-            focusOnSelect: true,
-            arrows: false,
-            infinite: false,
-        });
-
-    }else{
-        $('[data-target-spec-current="9"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            dots:true,
-            nav: false,
-        });
-    }
-
-
-
-
-
-    if($( window ).width() > 576){
-        $('[data-target-spec-current="13"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            asNavFor: $('[data-target-spec-current="13"] .slide-specifications__photo-preview-items'),
-            prevArrow: $('[data-target-spec-current="13"] .slide-specifications__photo-preview-btns .icon-angle-left'),
-            nextArrow: $('[data-target-spec-current="13"] .slide-specifications__photo-preview-btns .icon-angle-right'),
-            responsive: [
-                {
-                    breakpoint: 576, //
-                    settings: {
-                        dots:true,
-                        nav:false
-                    }
-                }
-            ]
-        });
-
-        $('[data-target-spec-current="13"] .slide-specifications__photo-preview-items').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: $('[data-target-spec-current="13"] .slide-specifications__photo-full-wrp'),
-            dots: false,
-            focusOnSelect: true,
-            arrows: false,
-            infinite: false,
-        });
-
-    }else{
-        $('[data-target-spec-current="13"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            dots:true,
-            nav: false,
-        });
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    if($( window ).width() > 576){
-        $('[data-target-spec-current="17"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            asNavFor: $('[data-target-spec-current="17"] .slide-specifications__photo-preview-items'),
-            prevArrow: $('[data-target-spec-current="17"] .slide-specifications__photo-preview-btns .icon-angle-left'),
-            nextArrow: $('[data-target-spec-current="17"] .slide-specifications__photo-preview-btns .icon-angle-right'),
-            responsive: [
-                {
-                    breakpoint: 576, //
-                    settings: {
-                        dots:true,
-                        nav:false
-                    }
-                }
-            ]
-        });
-
-        $('[data-target-spec-current="17"] .slide-specifications__photo-preview-items').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: $('[data-target-spec-current="17"] .slide-specifications__photo-full-wrp'),
-            dots: false,
-            focusOnSelect: true,
-            arrows: false,
-            infinite: false,
-        });
-
-    }else{
-        $('[data-target-spec-current="17"] .slide-specifications__photo-full-wrp').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            dots:true,
-            nav: false,
-        });
-    }
-
-
-
-
-
-    mainSlider();
-    function mainSlider(){
-
-        var $leftBtn;
-        var $rightBtn;
-
-        if($(window).width() > 1650){
-            $leftBtn = $('[data-full-slider-btn-left]');
-            $rightBtn = $('[data-full-slider-btn-right]');
         }else{
-            $leftBtn = $('[data-full-slider-btn-left--adaptive]');
-            $rightBtn = $('[data-full-slider-btn-right--adaptive]');
+            if($slider.is('.slick-initialized')) $slider.slick('unslick');
         }
-
-
-        // слайдер всех спецификаций
-        $('[data-slick-slider-spec-items]').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            fade: true,
-            swipe: false,
-            prevArrow: $leftBtn,
-            nextArrow: $rightBtn,
-        });
-
-       $('[data-slick-slider-spec-items]').on('afterChange', function(event, slick, currentSlide, nextSlide){
-           // отключаем все первые и снова включаем
-           // TODO циклом искать все первый блоки и активировать - после смены слайдов
-           // выстаильять ервык активными и активироват ьслайд
-
-        });
     }
 
-    $(window).resize(function() {
-        $('[data-slick-slider-spec-items]').slick('unslick');
-        mainSlider();
-    });
+
+
+    // внутренний слайдер с фотографиями товара
+    var $specificationsNavBtns = $('[data-target-spec]');
+
+    $specificationsNavBtns.on('click', showSpecificationsContent);
+
+    function showSpecificationsContent(evt) {
+
+        var attr = $(this).data('target-spec');
+        var $parent = $(this).closest('.slide-item--specifications');
+
+        // отобразим характеристики
+        var $newContentNode = getNewContent(attr, $parent);
+        show($newContentNode, $(this), $parent);
+    }
+
+    function getNewContent(dataAttr, $parent) {
+         return $parent.find('.slide-specifications__content-wrp').eq(dataAttr);
+    }
+
+    function show(node, $btn, $parent) {
+        // отключаем слайдеры
+        disableSliders($slickSliders_specPhotos);
+
+        // удаляем класс у кнопок
+        $parent.find('[data-target-spec]').removeClass('active');
+        $parent.find('.slide-specifications__content-wrp').removeClass('active');
+
+        node.addClass("active");
+        $btn.addClass('active');
+
+        setTimeout(function () {
+            enableSlider($slickSliders_specPhotos);
+        }, 0);
+
+    }
 
 })();
 
