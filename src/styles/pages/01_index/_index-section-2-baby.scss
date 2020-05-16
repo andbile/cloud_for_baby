@@ -1,6 +1,8 @@
 // стили для всех блоков с детьми
 .index-section-baby{
   position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
   background-image: url("../img/bg_white_blanket_and_stars.jpg");
   background-color: $bg-color-primary;
   background-repeat: no-repeat;
@@ -22,13 +24,11 @@
 // слайдер на 3-м слайде
 .index-section-baby__slick-slider, .index-section-baby__slider-item{
   position: relative;
-  height: calc(100vh - 95px);
+  height: 100vh;
 }
 .index-section-baby__slick-slider{
   width: 100%;
 }
-
-
 
 .index-section-baby__slider-item{
   background-color: $bg-color-primary;
@@ -86,6 +86,9 @@
   align-self: center;
   width: 42%;
   padding-left: 10px;
+  padding-top: 140px;
+  padding-bottom: 20px;
+
   z-index: 12;
 
   &>div{

@@ -421,7 +421,35 @@
     particlesJS('particles-js3', particles3);
     particlesJS('particles-js4', particles4);
 
+    // Отключаем анимацию
+    var isAnimationOn = true;
+    var $elementFirstSection = $('#first');
+    var elementHeight = $elementFirstSection.height();
+    var $elementAnimation = $('.particles-animation__wrp');
 
-    // TODO отключить после промотки
+    $(document).scroll(function(){
+        var windowScroll = $(window).scrollTop();
 
+        if(windowScroll > elementHeight - 10){
+            $elementAnimation.css('display', 'none');
+            isAnimationOn = false;
+        }else{
+            reinitAnimation();
+        }
+    });
+
+
+    function reinitAnimation() {
+
+        if(isAnimationOn) return;
+
+        $elementAnimation.css('display', 'block');
+
+        particlesJS('particles-js1', particles1);
+        particlesJS('particles-js2', particles2);
+        particlesJS('particles-js3', particles3);
+        particlesJS('particles-js4', particles4);
+
+        isAnimationOn = true;
+    }
 })();

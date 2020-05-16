@@ -55,7 +55,7 @@
         disableSliders($slickSliders_specPhotos);
         setTimeout(function () {
             enableSlider($slickSliders_specPhotos);
-        }, 0);
+        }, 100);
     }
 
     function enableSlider($slideNode) {
@@ -147,7 +147,7 @@
 
         setTimeout(function () {
             enableSlider($slickSliders_specPhotos);
-        }, 0);
+        }, 100);
 
     }
 

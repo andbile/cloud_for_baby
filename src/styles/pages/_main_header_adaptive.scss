@@ -25,20 +25,9 @@
 
 @media (max-width: 576px) {
 
-  .main-header, .main-header__hover{
-    // TODO подправить высоту
-    height: 70px;
-  }
-
-  .main-header__hover.fixed{
-    height: 70px;
-  }
-
   .main-header__wrp{
-    padding-top: 24px;
-    padding-bottom: 24px;
-    // TODO подправить высоту
-    height: 70px;
+    //padding-top: 24px;
+    //padding-bottom: 24px;
   }
 
   .main-menu{

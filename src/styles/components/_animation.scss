@@ -9,6 +9,32 @@
   }
 }
 
+@keyframes fadeMainHeader{
+  0%{
+    right: -1000px;
+    opacity: 0;
+
+  }
+  100%{
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutMainHeader{
+  0%{
+    right: 0;
+    opacity: 1;
+
+  }
+  100%{
+    right: -1000px;
+    opacity: 0;
+  }
+}
+
+
+
 @keyframes fade {
    0% {
      opacity: 0;
@@ -28,6 +54,7 @@
     opacity: 0;
   }
 }
+
 
 @keyframes airplane{
   0%{

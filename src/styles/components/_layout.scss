@@ -8,8 +8,6 @@ body{
   max-width: 1920px;
   min-width: 320px;
   margin: 0 auto;
-
-  /*outline: 1px solid green;*/
 }
 
 .container{
@@ -17,8 +15,6 @@ body{
   margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px;
-
- /* outline: 1px solid red;*/
 }
 .block_img{
   text-align: center;
@@ -48,9 +44,17 @@ body{
 }
 
 .index-full-view{
-  height: calc(100vh - 95px);
+  padding-top: 122px;
+  padding-bottom: 20px;
+  height: 100vh;
   background-color: gray;
   overflow: hidden;
+}
+
+@media (max-width: 1024px){
+  .index-full-view{
+    padding-top: 50px;
+  }
 }
 
 @media (max-width: 992px){
@@ -60,15 +64,15 @@ body{
   }
 
   .index-full-view--slide{
-    height: calc(100vh - 95px);
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100vh;
     overflow: hidden;
   }
 }
 
 @media (max-width: 576px) {
-  .index-full-view--slide{
-    height: calc(100vh - 70px);
-  }
+
 }
 
 
