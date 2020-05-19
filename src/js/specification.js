@@ -9,18 +9,15 @@
     // инициализация основного слайдера
     mainRangeSlider();
 
-    // при ресайзе, заново инициализируем слайдер, для переключения кнопок
-    var isEventResizeImg = false;
+    var timerId;
     $(window).resize(function() {
 
-        setTimeout(function () {
-            if(!isEventResizeImg){
-                $slickSlider_specItems.slick('unslick');
-                mainRangeSlider();
-                isEventResizeImg = true;
-            }
-        },500);
-        isEventResizeImg = false;
+        clearTimeout(timerId);
+        timerId = setTimeout(function() {
+            disableSliders($slickSliders_specPhotos);
+            enableSlider($slickSliders_specPhotos);
+           // mainRangeSlider();
+            }, 300);
     });
 
 
@@ -31,13 +28,8 @@
         var $rightBtn;
 
         // переключения разных кнопок для одного слайдера
-        if($(window).width() > 1650){
-            $leftBtn = $('[data-full-slider-btn-left--spec]');
-            $rightBtn = $('[data-full-slider-btn-right--spec]');
-        }else{
-            $leftBtn = $('[data-full-slider-btn-left--spec-adaptive]');
-            $rightBtn = $('[data-full-slider-btn-right--spec-adaptive]');
-        }
+        $leftBtn = $('[data-full-slider-btn-left--spec]');
+        $rightBtn = $('[data-full-slider-btn-right--spec]');
 
         // слайдер для всех спецификаций
         $slickSlider_specItems.slick({
@@ -72,9 +64,18 @@
                 slidesToScroll: 1,
                 arrows: true,
                 fade: true,
+                dots:false,
                 asNavFor: $previewSlider,
                 prevArrow: $leftBtn,
                 nextArrow: $rightBtn,
+                responsive: [
+                    {
+                        breakpoint: 577,
+                        settings: {
+                            dots: true
+                        }
+                    }
+                ]
             });
             $previewSlider.slick({
                 slidesToShow: 3,
@@ -104,7 +105,6 @@
         var $previewSlider = $currentContent.find('.slide-specifications__photo-preview-items');
 
         if($( window ).width() > 576){
-
             if($slider.is('.slick-initialized')) $slider.slick('unslick');
             if($previewSlider.is('.slick-initialized')) $previewSlider.slick('unslick');
 

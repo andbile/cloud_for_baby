@@ -90,6 +90,7 @@
 
 .slide-specifications__content-wrp.active{
   display: flex;
+  margin-bottom: 20px;
   animation: fade 0.5s;
 }
 
@@ -246,20 +247,20 @@
   }
 }
 
-.slide-specifications__btn-wrp.response {
+.main-slide-specifications__btn-wrp{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 48px;
+}
+
+.main-slide-specifications__btn-wrp2{
   position: relative;
   display: none;
   width: 100%;
-  height: 70px;
-  padding-left: 20px;
-
-  .slider-btn--full-slider{
-    top: auto;
-    transform: translateY(0);
-    bottom: 0;
-  }
+  height: 50px;
 }
-
 
 .index-section-3{
   .slick-dots li button:before{

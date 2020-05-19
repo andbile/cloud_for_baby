@@ -42,7 +42,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 50vh;
+  height: 100vh;
   background-repeat: repeat-x;
   background-position: center bottom;
 }
@@ -89,7 +89,7 @@
   padding-top: 140px;
   padding-bottom: 20px;
 
-  z-index: 12;
+  z-index: 14;
 
   &>div{
     border-radius: 5px;
