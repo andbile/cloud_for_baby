@@ -26,15 +26,17 @@
 
     var $scrollContainer = $('.questions__items');
 
+    if(device.type === 'desktop'){
+        $scrollContainer.on('mouseover', function () {
+            disableScroll();
+            // в методе disableScroll для боди включается {'overflow' : 'auto'},
+            // что приводит к появлению правой прокрутки и потрясыванию
+            $('body').css({'overflow' : 'hidden'});
+        });
 
-    $scrollContainer.on('mouseover', function () {
-        disableScroll();
-    });
-
-    $scrollContainer.on('mouseout', function () {
-        if(device.type === 'desktop' && $(window).width() >= WINDOW_WIDTH_MIN) {
+        $scrollContainer.on('mouseout', function () {
             enableScroll();
-        }
-    });
+        });
+    }
 
 })();

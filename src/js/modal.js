@@ -50,12 +50,29 @@
         function showModalWindow($modalWindow) {
             $modalWindow.addClass("active");
             $overlay.toggleClass('active');
+
+            if(device.type === 'desktop'){
+                disableScroll();
+                $('body').css({'overflow' : 'hidden'});
+            }
+
+            if(device.type === 'mobile' || device.type === 'tablet'){
+                $('body').css({'overflow' : 'hidden'});
+            }
         }
 
         function closeWindow($modalWindow) {
             $overlay.removeClass('active');
             $overlay.addClass('active--fadeout');
             $modalWindow.addClass('active--fadeout');
+
+            if(device.type === 'desktop'){
+                enableScroll();
+            }
+
+            if(device.type === 'mobile' || device.type === 'tablet'){
+                $('body').css({'overflow' : 'auto'});
+            }
 
            setTimeout(function () {
                $modalWindow.removeClass('active');

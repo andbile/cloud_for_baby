@@ -171,12 +171,17 @@
 
   a:before{
     content: '';
-    display: inline-block;
+
+    display: none;
     position: absolute;
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
     background-image: url('../img/sprite.png');
+  }
+
+  a:hover:before, a:active:before{
+    display: inline-block;
   }
 
   li:nth-child(8n-7) a:before{
@@ -228,6 +233,10 @@
     height: 17px;
   }
 }
+
+
+
+
 
 .main-menu__contacts a{
   display: block;
