@@ -272,3 +272,47 @@
   }
 }
 
+
+// разворачивающийся список
+.slider-specifications{
+  .show-btn{
+    display: none;
+
+    position: relative;
+    padding: 12px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    border: 2px solid #c4c4c4;
+    border-radius: 5px;
+
+    &:after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      height: 8px;
+      width: 8px;
+      right: 15px;
+
+      border-bottom: 1px solid #000000;
+      border-right: 1px solid #000000;
+
+      transform: rotate(45deg);
+      transform-origin: 66% 66%;
+      transition: transform 0.4s,  border-color 0.4s;
+    }
+
+    &.active{
+     border-color: $font-color--hover;
+    }
+
+    &.active:after{
+      transform: rotate(-135deg);
+    }
+  }
+}
+
+
+
+
