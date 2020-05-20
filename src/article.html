@@ -1,10 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+@@include('./template/_page_head.html')
+<!--@@include('./template/_preloader.html')-->
+@@include('./template/_header.html')
 
-</body>
-</html>
+
+
+<main>
+
+    <section class="articles-header">
+        <div class="container">
+            <div class="articles-header__title">Статьи</div>
+            <div class="articles-header__breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a href="articles.html">Статьи</a>
+                <span class="articles-header__current-article">Новое “Облачко” Интерактивное постельное белье</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="article">
+        <div class="container">
+            <div class="article__title">Новое “Облачко” Интерактивное постельное белье</div>
+            <div class="article__date">3 марта 2019</div>
+            <div class="article__content">
+                <p>
+                    Perina для детской кровати. Сила природы для здоровья вашего ребенка: поверхность из натурального хлопка,
+                    наполнитель — антибактериальное эвкалиптовое волокно. Сочетание прочной «дышащей» ткани и объемного наполнителя
+                    в одеяле Perina обеспечивает оптимальный температурный баланс в течение всего года: летом под одеялом не жарко, а зимой не холодно.
+                    Perina для детской кровати. Сила природы для здоровья вашего ребенка: поверхность из натурального хлопка, наполнитель —
+                    антибактериальное эвкалиптовое волокно.
+                </p>
+            </div>
+
+            <div class="article__link">
+                Прочесть статью вы можете <a href="">тут</a>
+            </div>
+
+            <div class="article__line"></div>
+
+            <div class="article__gallery-wrp">
+                <div class="article__gallery-title">Фотогалерея</div>
+                <div class="article__gallery-items" data-slider-slick-article-gallery>
+
+
+                        <div class="article__gallery-item">
+                            <a class="block_img-full" data-block-img--full href="img/articles_img1.jpg" data-fancybox="gallery-article">
+                                <img src="img/articles_img1.jpg" alt="Фотогалерея">
+                            </a>
+                        </div>
+
+
+
+
+                    <div class="article__gallery-item">
+                        <a class="block_img-full" data-block-img--full href="img/articles_img2.jpg" data-fancybox="gallery-article">
+                            <img src="img/articles_img2.jpg" alt="Фотогалерея">
+                        </a>
+                    </div>
+
+                    <div class="article__gallery-item">
+                        <a class="block_img-full" data-block-img--full href="img/articles_img3.jpg" data-fancybox="gallery-article">
+                            <img src="img/articles_img3.jpg" alt="Фотогалерея">
+                        </a>
+                    </div>
+
+                    <div class="article__gallery-item">
+                        <a class="block_img-full" data-block-img--full href="img/articles_img3.jpg" data-fancybox="gallery-article">
+                            <img src="img/articles_img3.jpg" alt="Фотогалерея">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="article__link2">
+                <span class="icon icon-angle-left"></span><a href="articles.html">Назад к списку</a>
+            </div>
+
+          
+        </div>
+    </section>
+
+    @@include('./template/_overlay.html')
+</main>
+<footer class="main-footer" id="footer">
+    <!-- footer -->
+    @@include('./template/_footer.html')
+</footer>
+@@include('./template/_modal.html')
+<!-- bottom of page -->
+@@include('./template/_page_bottom.html')

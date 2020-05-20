@@ -54,4 +54,44 @@
     background-color: #8e8e8e;
   }
 
+  span{
+    padding-left: 5px;
+    font-weight: 700;
+  }
+
+}
+
+@media (max-width: 992px){
+
+}
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 576px) {
+  .articles-header{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .articles-header__title{
+    font-size: 14px;
+  }
+
+  .articles-header__breadcrumbs{
+    font-size: 11px;
+  }
+
+
+}
+
+
+@media (max-width: 500px) {
+
+
+}
+
+@media (max-width: 320px){
+
 }

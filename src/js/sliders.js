@@ -34,4 +34,38 @@
         loop: true
     });
 
+
+    // слайдер - идеи для фото
+    $('[data-slider-slick-article-gallery]').slick({
+        speed: 1000,
+        slidesToShow: 3,
+        //autoplay: true,
+        //autoplaySpeed: 4000,
+        dots:false,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    dots:true,
+                }
+            }
+
+        ]
+    });
+
+    $('[data-slider-slick-article-gallery] [data-fancybox]:not(.slick-cloned)').fancybox({
+        loop: true
+    });
+
+
+
+
 })();

@@ -95,6 +95,10 @@
   a:hover{
     color: $font-color--hover;
   }
+
+  .icon:before{
+    font-size: 17px;
+  }
 }
 
 
@@ -117,6 +121,16 @@
 }
 
 @media (max-width: 576px) {
+  .articles__items-wrp{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .articles__title{
+    font-size: 16px;
+  }
+
+
   .articles__items{
     justify-content: space-around;
   }
@@ -124,6 +138,16 @@
   .articles__item {
     width: 100%;
     max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .articles__btn{
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &.icon:before {
+      font-size: 14px;
+    }
   }
 
 }
