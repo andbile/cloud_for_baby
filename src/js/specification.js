@@ -168,6 +168,7 @@
     });
 
 
+    //
     $('.slide-specifications__photo-full-wrp [data-fancybox]').fancybox({
         loop: true
     })
