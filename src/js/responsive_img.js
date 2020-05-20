@@ -2,6 +2,9 @@
     // подгонка размеров изображения под адаптивный блок
     // изображения должно заполнить всю ширину и высоту блока
     // если по какой-то из сторон изображения больше родительского блока, то изображение обрезается по краям
+
+    window.makeResponsiveImg = makeResponsiveImg;
+
     makeResponsiveImg();
 
     // при смене ширины экрана выполняем пересчёт габаритов изображения,
@@ -9,6 +12,7 @@
     var isEventResizeImg = false;
     $(window).resize(function() {
 
+        // TODO переделать через idTamer
         setTimeout(function () {
             if(!isEventResizeImg){
                 makeResponsiveImg();

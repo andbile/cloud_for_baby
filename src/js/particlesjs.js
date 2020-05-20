@@ -1,5 +1,8 @@
 (function () {
 
+    // проверка наличия блока для скролинга
+    if( $('[data-particlesjs-animation]').length === 0) return;
+
     //particles sitting
     var particles1 = {
         "particles": {

@@ -1,0 +1,140 @@
+.articles__items-wrp{
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.articles__items{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.articles__item{
+  flex: none;
+  display: none;
+  width: calc(1/3*100% - (1 - 1/3)*50px);
+  margin-bottom: 50px;
+  max-width: 320px;
+  padding-bottom: 10px;
+
+  font-family: 'AvantGardeGothicC', sans-serif;
+  transition: box-shadow 0.3s;
+
+  &:hover{
+    box-shadow: 0 10px 10px rgba(41, 52, 73, 0.5);
+  }
+}
+
+.articles__img{
+  width: 100%;
+  height: 216px;
+  margin-bottom: 15px;
+}
+
+.articles__title{
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.articles__date{
+  font-size: 10px;
+  color: #8e8e8e;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+.articles__btn{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  margin-bottom: 25px;
+
+  border: 1px solid #8e8e8e;
+  border-radius: 4px;
+  text-align: center;
+
+  background-color: transparent;
+  outline: none;
+
+  font-family: 'AvantGardeGothicC', sans-serif;
+  font-size: 11px;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.4s;
+
+  &:before{
+    position: relative;
+    left: -5px;
+  }
+
+  &:hover{
+    background-color: $font-color--hover;
+    border-color: $font-color--hover;
+    color: #ffffff;
+  }
+}
+
+.articles__btn--items{
+  text-align: center;
+  margin: 0 auto;
+
+  transition: color 0.4s;
+
+  a{
+    margin-right: 20px;
+  }
+
+  a:last-child{
+    margin-right: 0;
+  }
+
+  a:hover{
+    color: $font-color--hover;
+  }
+}
+
+
+
+
+
+@media (max-width: 992px){
+  .articles__item {
+    width: calc(1 / 3 * 100% - (1 - 1 / 3) * 20px);
+    margin-bottom: 40px;
+
+  }
+}
+
+@media (max-width: 768px){
+  .articles__item {
+    width: calc(1 / 2 * 100% - (1 - 1 / 2) * 20px);
+  }
+
+}
+
+@media (max-width: 576px) {
+  .articles__items{
+    justify-content: space-around;
+  }
+
+  .articles__item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+
+}
+
+@media (max-width: 320px){
+
+}
+

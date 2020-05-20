@@ -1,0 +1,57 @@
+.articles-header{
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url("../img/bg_articles.jpg");
+  background-color: $bg-color-primary;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.articles-header__title{
+  margin-bottom: 20px;
+
+  font-family: 'AvantGardeGothicC', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.articles-header__breadcrumbs{
+  font-family: 'AvantGardeGothicC', sans-serif;
+  font-size: 18px;
+
+  a{
+    position: relative;
+    color: #8e8e8e;
+    padding-left: 9px;
+    padding-right: 15px;
+    transition: color 0.4s;
+  }
+
+  a:hover{
+    color: black;
+  }
+
+  a:first-child{
+    padding-left: 0;
+  }
+
+  a:last-child:after{
+    display: none;
+  }
+
+  a:after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 1px;
+    width: 5px;
+    background-color: #8e8e8e;
+  }
+
+}

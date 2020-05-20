@@ -1,7 +1,4 @@
 (function () {
-    // проверка наличия блока для скролинга
-    if( $('[data-is-scroll-block]').length === 0) return;
-
     var ARROW_UP = 38;
     var ARROW_DOWN = 40;
     var WINDOW_WIDTH_MIN = 1024;
@@ -9,6 +6,9 @@
     window.enableScroll = enableScroll;
     window.disableScroll = disableScroll;
     window.WINDOW_WIDTH_MIN = WINDOW_WIDTH_MIN;
+
+    // проверка наличия блока для скролинга
+    if( $('[data-is-scroll-block]').length === 0) return;
 
     var $sections = $('[data-anchor]');
 
@@ -50,6 +50,7 @@
         // определяем на каком слайде была перезагрузка страницы
         var fullHref = document.location.href;
         var anchor = fullHref.slice(fullHref.indexOf('#') + 1);
+
         var $currentNode = $sections.filter('[data-anchor="' + anchor + '"]');
 
         // удаляем пометки у слайдов и ставим на текущем активном (показанном)
@@ -60,9 +61,6 @@
         window.addEventListener('keydown', windowScrollHandler);
     }
 
-
-    // TODO скролл через мобильные экраны
-   /* window.addEventListener('scroll', windowScrollHandler);*/
 
     function windowScrollHandler (evt){
         // после срабатывания события отключаем обработчики

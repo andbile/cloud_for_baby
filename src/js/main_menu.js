@@ -1,5 +1,18 @@
 (function () {
 
+
+    // проверяем - открывается ли модальное окно в документе который скролится
+    var isScrollBlock;
+    if( $('[data-is-scroll-block]').length === 0){
+        isScrollBlock = false;
+
+        // если основное меню находится не на странице со скролингом
+        $('.main-header').css('position', 'relative');
+
+
+    } else isScrollBlock = true;
+
+
     // показываем выпадающее меню
     var $btn = $('[data-main-menu-btn-show]');
     var $btnClose = $('[data-main-menu-btn--close]');
@@ -30,11 +43,19 @@
     // нажатие на ссылки в меню
     var menuBtns = $popupMenu.find('.main-menu__list a');
 
-    menuBtns.on('click', function (evt) {
-        evt.preventDefault();
-        var idAttr = $(this).attr('href');
-        var element = $(idAttr);
+    if(isScrollBlock){
+        menuBtns.on('click', scrollToSection);
+    }else{
+        menuBtns.remove('click', scrollToSection);
+    }
 
+    function scrollToSection(evt){
+        evt.preventDefault();
+        // получаем часть адреса из нажатой ссылки для поиска элемента по id
+        var href = $(this).attr('href');
+        var idAnchor = href.slice(href.indexOf('#'));
+
+        var element = $(idAnchor);
         var destination = element.offset().top;
 
         // TODO желательно делать условием body иначе html - что бы срабатывала два раза функция
@@ -47,5 +68,6 @@
         // удаляем все классы active
         $sections.removeClass('active');
         element.addClass('active');
-    });
+    }
+
 })();

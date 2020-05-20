@@ -13,6 +13,7 @@ jQuery(document).ready(function($) {
     @@include('./answer.js')
     @@include('./specification.js')
     @@include('./animationBaby.js')
+    @@include('./article.js')
 
 
    /* @@include('./canvas.js')*/
