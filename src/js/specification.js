@@ -154,31 +154,16 @@
 
 
 
-
-
-
-
-
     // выпадающий блок при 576
     var $dropdownBtns = $('[data-spec-dropdown-block--btn]');
-    console.log($dropdownBtns);
 
     $dropdownBtns.on('click', function (evt) {
 
-        console.log($(this));
-
         var $dropdownElement = $(this).siblings("[data-spec-dropdown-block--content]");
-        console.log($dropdownElement);
 
         $dropdownElement.toggleClass('active');
         $(this).toggleClass('active');
-
-
-
     });
-
-
-
 
 })();
 
