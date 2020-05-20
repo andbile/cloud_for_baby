@@ -30,4 +30,8 @@
         ]
     });
 
+    $('[data-slider-slick-02] [data-fancybox]:not(.slick-cloned)').fancybox({
+        loop: true
+    });
+
 })();

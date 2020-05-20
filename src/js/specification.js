@@ -65,6 +65,7 @@
                 arrows: true,
                 fade: true,
                 dots:false,
+                /*infinite: true,*/
                 asNavFor: $previewSlider,
                 prevArrow: $leftBtn,
                 nextArrow: $rightBtn,
@@ -83,8 +84,8 @@
                 asNavFor: $slider,
                 dots: false,
                 focusOnSelect: true,
-                arrows: false,
-                infinite: false
+                infinite: true,
+                arrows: false
             });
             // при меньше 576 покажем только слайдер и навигацию
         }else{
@@ -95,6 +96,7 @@
                 fade: true,
                 dots:true,
                 nav: false,
+              /*  infinite: true,*/
             });
         }
     }
@@ -164,6 +166,11 @@
         $dropdownElement.toggleClass('active');
         $(this).toggleClass('active');
     });
+
+
+    $('.slide-specifications__photo-full-wrp [data-fancybox]').fancybox({
+        loop: true
+    })
 
 })();
 
