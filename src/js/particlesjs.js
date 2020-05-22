@@ -430,16 +430,24 @@
     var elementHeight = $elementFirstSection.height();
     var $elementAnimation = $('.particles-animation__wrp');
 
-    $(document).scroll(function(){
-        var windowScroll = $(window).scrollTop();
 
-        if(windowScroll > elementHeight - 10){
-            $elementAnimation.css('display', 'none');
-            isAnimationOn = false;
-        }else{
-            reinitAnimation();
-        }
+    var timerId;
+    $(window).scroll(function() {
+
+        var windowScroll = $(window).scrollTop();
+        clearTimeout(timerId);
+
+        timerId = setTimeout(function() {
+            if(windowScroll > elementHeight - 10){
+                $elementAnimation.css('display', 'none');
+                isAnimationOn = false;
+            }else{
+                reinitAnimation();
+            }
+        }, 100);
+
     });
+
 
 
     function reinitAnimation() {
