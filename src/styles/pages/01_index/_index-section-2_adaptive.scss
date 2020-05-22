@@ -29,7 +29,8 @@
 
   .index-section-baby__content{
     width: 100%;
-    //max-height: 28vh;
+    padding-top: 65px;
+    padding-left: 0;
     margin-bottom: 2vh;
     order: 1;
 
@@ -42,20 +43,46 @@
   }
 
   .index-section-baby__baby-wrp{
-    max-height: 55vh;
+    max-height: 60vh;
     order: 2;
   }
 
 }
 
 @media (max-width: 768px){
+  .index-section-baby__pillow-img{
+    max-height: 230px;
+    left: 45%;
+  }
+
+  .index-section-baby__blanket-img{
+    width: 85%;
+  }
+
+
+
 
 
 }
 
 @media (max-width: 576px) {
-  .index-section-baby__slick-slider, .index-section-baby__slider-item{
-    height: calc(100vh - 70px);
+  .index-section-baby__pillow-img{
+    width: 70%;
+    max-height: 210px;
+  }
+
+  .index-section-baby__blanket-img{
+    width: 75%;
+  }
+
+  .index-section-baby__title{
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .index-section-baby__text{
+    font-size: 14px;
+    line-height: 16px;
   }
 
 
@@ -68,7 +95,6 @@
   }
 
   .index-section-baby__slider{
-
     .slider-btn--full-slider.slider-btn--prev{
       left: 10px;
     }
@@ -80,7 +106,26 @@
 
 }
 
-@media (max-width: 320px){
+@media (max-width: 400px) {
+  .index-section-baby__pillow-img{
+    width: 75%;
+    max-height: 175px;
+    left: 42%;
+  }
 
+  .index-section-baby__blanket-img{
+    left: 55%;
+  }
+}
+
+@media (max-width: 320px){
+  .index-section-baby__pillow-img{
+    width: 80%;
+    max-height: 155px;
+  }
+
+  .index-section-baby__blanket-img{
+    width: 85%;
+  }
 }
 

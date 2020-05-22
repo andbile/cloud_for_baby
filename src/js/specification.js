@@ -5,6 +5,12 @@
     var $slickSlider_specItems = $('[data-slick-slider--spec-items]');
     // внутренние слайдеры (показ фото)
     var $slickSliders_specPhotos = $('[data-slick-slider--spec-photos]');
+    // кнопка и выпадающий контент при разрешении >=576
+    var $dropdownBtn =  $('[data-spec-dropdown-block--btn]');
+    var $dropdownContent = $('[data-spec-dropdown-block--content]');
+
+
+
 
     // инициализация основного слайдера
     mainRangeSlider();
@@ -123,6 +129,8 @@
     $specificationsNavBtns.on('click', showSpecificationsContent);
 
     function showSpecificationsContent(evt) {
+        // прячем весь не свернутый контент при 576
+        hideDropdownContent();
 
         var attr = $(this).data('target-spec');
         var $parent = $(this).closest('.slide-item--specifications');
@@ -167,8 +175,18 @@
         $(this).toggleClass('active');
     });
 
+    // при смене слайдов, прячем весь не свернутый контент при 576
+    function hideDropdownContent(){
+        $dropdownBtn.removeClass('active');
+        $dropdownContent.removeClass('active');
+    }
 
-    //
+
+    $($slickSlider_specItems).on('beforeChange', function(){
+        hideDropdownContent();
+    });
+
+
     $('.slide-specifications__photo-full-wrp [data-fancybox]').fancybox({
         loop: true
     })

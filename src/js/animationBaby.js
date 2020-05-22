@@ -13,6 +13,7 @@
     // анимация детей
     function animateBaby ($node, isSlick) {
 
+        // TODO исправить = из-за двойного срабатывания пришлось делать костыль
         if(isSlick === 'from-slick'){
             isStartFunc = true;
         }
@@ -25,24 +26,45 @@
         // сбрасываем начальный координаты в белье
         resetAnimateBaby($node);
 
-        //var $baby = $node.find('.index-section-baby__baby-img');
+
+
+        var $baby = $node.find('.index-section-baby__baby-img');
+        console.log($baby);
+        var $babyImg = $node.find('.index-section-baby__baby-img img');
         var $pillow = $node.find('.index-section-baby__pillow-img');
         var $blanket = $node.find('.index-section-baby__blanket-img');
 
+        // высоты ребёнка
+        var babyHeight = $babyImg.height();
+        var headHeight = Math.round(babyHeight * 0.272);
+        var legsHeight = Math.round(babyHeight * 0.484);
+        var breastHeight = Math.round(babyHeight * 0.652);
+
+        console.log('Высота головы = ' + headHeight);
+        console.log('Высота ног = ' +  legsHeight);
+
+        // высота подушки/одеяла
+        var pillowHeight = $pillow.height();
+        var blanketHeight = $blanket.height();
+
+        console.log('Высота подушки = ' + pillowHeight);
+        console.log('Высота одеяла = ' + blanketHeight);
+
+
         if($node.is('.index-section-baby--slide2')){
-            $pillow.animate({top:-230}, 1000);
-            $blanket.animate({bottom:-240}, 1000);
+            $pillow.animate({top: -pillowHeight}, 1000);
+            $blanket.animate({bottom: (-blanketHeight + legsHeight)}, 1000);
         }
 
         if($node.is('.index-section-baby--slide3')){
-            $pillow.animate({top:-40}, 1000);
-            $blanket.animate({bottom:-165}, 1000);
+            $pillow.animate({top: -40}, 1000);
+            $blanket.animate({bottom: (-blanketHeight + breastHeight)}, 1000);
         }
 
         // если событие пришло из слайдера слик
         if(isSlick === 'from-slick'){
             $pillow.animate({top:-40}, 1000);
-            $blanket.animate({bottom:-165}, 1000);
+            $blanket.animate({bottom: (-blanketHeight + breastHeight)}, 1000);
         }
 
         isStartFunc = false;
@@ -69,6 +91,7 @@
     $('[data-slick-slider-baby-items]').on('beforeChange', function(){
         resetAnimateBaby();
     });
+
     $('[data-slick-slider-baby-items]').on('afterChange', function(event, slick, currentSlide, nextSlide){
         animateBaby(slick.$slider, 'from-slick');
     });
