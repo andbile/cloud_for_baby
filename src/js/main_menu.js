@@ -55,6 +55,7 @@
         var href = $(this).attr('href');
         var idAnchor = href.slice(href.indexOf('#'));
 
+
         var element = $(idAnchor);
         var destination = element.offset().top;
 
@@ -62,6 +63,8 @@
         $('body, html').animate({scrollTop: destination}, 500, function () {
             closeMenu();
         });
+
+        document.location.hash = idAnchor;
 
         var $sections = $('[data-anchor]');
 
