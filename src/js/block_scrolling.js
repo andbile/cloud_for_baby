@@ -66,8 +66,15 @@
         if(evt.type === 'touchend'){
             touchendPositionY = evt.changedTouches[0].screenY;
 
+            // если при нажатии нечаянно сдвинули палец
+            var delta = Math.abs(touchstartPositionY - touchendPositionY);
+            if(delta < 40) return;
+
             window.removeEventListener("touchstart", windowTouchMoveHandler);
             window.removeEventListener("touchend", windowTouchMoveHandler);
+
+
+
 
             var direction = getDirection();
 

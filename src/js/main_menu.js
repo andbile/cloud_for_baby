@@ -53,24 +53,34 @@
         evt.preventDefault();
         // получаем часть адреса из нажатой ссылки для поиска элемента по id
         var href = $(this).attr('href');
-        var idAnchor = href.slice(href.indexOf('#'));
+        var indexStr = href.indexOf('#');
 
+        // если ссылка ссылается на другую станицу (без якаря)
+        if(indexStr === -1){
+            var host = document.location.host;
+            var protocol = document.location.protocol;
 
-        var element = $(idAnchor);
-        var destination = element.offset().top;
+            var newUrl = protocol + '//' + host + '/' + href;
+            document.location.href = newUrl;
+        }else{
+            var idAnchor = href.slice(indexStr);
 
-        // TODO желательно делать условием body иначе html - что бы срабатывала два раза функция
-        $('body, html').animate({scrollTop: destination}, 500, function () {
-            closeMenu();
-        });
+            var element = $(idAnchor);
 
-        document.location.hash = idAnchor;
+            var destination = element.offset().top;
 
-        var $sections = $('[data-anchor]');
+            // TODO желательно делать условием body иначе html - что бы срабатывала два раза функция
+            $('body, html').animate({scrollTop: destination}, 500, function () {
+                closeMenu();
+            });
 
-        // удаляем все классы active
-        $sections.removeClass('active');
-        element.addClass('active');
+            document.location.hash = idAnchor;
+
+            var $sections = $('[data-anchor]');
+
+            // удаляем все классы active
+            $sections.removeClass('active');
+            element.addClass('active');
+        }
     }
-
 })();
