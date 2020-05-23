@@ -14,6 +14,10 @@
     position: relative;
   }
 
+  .container{
+    z-index: 14;
+  }
+
   .index-section-baby__wrp{
     overflow: hidden;
   }
@@ -47,9 +51,10 @@
   background-position: center bottom;
 }
 
+// облака
 .index-section__baby-bg-bottom-img-1{
-  bottom: -85px;
-  z-index: 13;
+  bottom: -70px;
+  z-index: 15;
 }
 
 .index-section__baby-bg-bottom-img-2{
