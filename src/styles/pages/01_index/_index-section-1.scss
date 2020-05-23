@@ -52,12 +52,14 @@
 
 
 @media (max-width: 992px){
-
+  .index-section-1__logo{
+    margin-top: 20vh;
+  }
 }
 
 @media (max-width: 768px){
   .index-section-1__logo{
-    margin-top: 10vh;
+    margin-top: 18vh;
     margin-bottom: 10vh;
     height: 25vh;
   }
@@ -70,7 +72,7 @@
 
 @media (max-width: 576px) {
   .index-section-1__logo{
-    margin-top: 8vh;
+    margin-top: 18vh;
     margin-bottom: 8vh;
     height: 25vh;
   }

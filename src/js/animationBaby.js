@@ -26,10 +26,7 @@
         // сбрасываем начальный координаты в белье
         resetAnimateBaby($node);
 
-
-
         var $baby = $node.find('.index-section-baby__baby-img');
-        console.log($baby);
         var $babyImg = $node.find('.index-section-baby__baby-img img');
         var $pillow = $node.find('.index-section-baby__pillow-img');
         var $blanket = $node.find('.index-section-baby__blanket-img');
@@ -40,15 +37,9 @@
         var legsHeight = Math.round(babyHeight * 0.484);
         var breastHeight = Math.round(babyHeight * 0.652);
 
-        console.log('Высота головы = ' + headHeight);
-        console.log('Высота ног = ' +  legsHeight);
-
         // высота подушки/одеяла
         var pillowHeight = $pillow.height();
         var blanketHeight = $blanket.height();
-
-        console.log('Высота подушки = ' + pillowHeight);
-        console.log('Высота одеяла = ' + blanketHeight);
 
 
         if($node.is('.index-section-baby--slide2')){

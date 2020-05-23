@@ -148,8 +148,6 @@
         }
 
         enableTouchEventListener();
-
-        console.log(nextNode);
     }
 
 
@@ -225,9 +223,8 @@
         if(direction === "down" && nextNode > 4){
             nextNode = 5;
         }
-      /*  else if(nextNode < 0){
-            nextNode = 0;
-        }*/
+
+
         if(direction === "up" && nextNode > 4){
             nextNode = 3;
         }
@@ -303,11 +300,13 @@
     }
 
     // при ресайзе, сбрасываем все настройки по умолчанию
+    // TODO исправить
     var isEventResize = false;
     $(window).resize(function() {
         setTimeout(function () {
             if(!isEventResize){
                 if(device.type === 'desktop'){
+                    console.log(device.type);
                     enableScrollingPC();
                 }else if(device.type === 'mobile' || device.type === 'tablet'){
                     enableScrollingMobile();

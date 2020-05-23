@@ -28,7 +28,7 @@
 }
 
 .index-section-4__slider{
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 
   .slider-items{
@@ -38,10 +38,9 @@
   }
 
   .slide-item{
-    //width: 100%;
-   /* height: 50vh;*/
     padding-left: 10px;
     padding-right: 10px;
+    overflow: hidden;
   }
 }
 
