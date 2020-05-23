@@ -32,17 +32,21 @@
     <link rel="stylesheet" href="css/main.min.css">
 
     <script>
-     /*   window.addEventListener('load', function () {
+       window.addEventListener('load', function () {
             var preloader = document.querySelector('#preloader');
-            preloader.classList.add('loaded');
+            var heartBig = preloader.querySelector('.preloader__heart--big');
+           setTimeout(function () {
+               heartBig.classList.add('active');
+           }, 300);
+
+           setTimeout(function () {
+               heartBig.classList.add('opacity');
+           }, 1700);
+
             setTimeout(function () {
                 document.body.removeChild(preloader);
-            }, 1500);
-        });*/
-
-    /*    window.addEventListener('load', (event) => {
-            document.querySelector('.preloader').remove()
-        });*/
+            }, 2200);
+        });
     </script>
 </head>
 <body>

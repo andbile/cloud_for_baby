@@ -1,11 +1,9 @@
 @keyframes preloaderAnimation {
   0%{
-    bottom: -20%;
-    transform: rotate(0);
+    opacity: 0;
   }
   100%{
-    bottom: 120%;
-    transform: rotate(720deg);
+    opacity: 1;
   }
 }
 
