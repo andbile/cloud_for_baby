@@ -74,8 +74,6 @@
             window.removeEventListener("touchend", windowTouchMoveHandler);
 
 
-
-
             var direction = getDirection();
 
             // текущий слайд
@@ -114,7 +112,6 @@
                window.removeEventListener("touchstart", windowTouchMoveHandler);
                window.removeEventListener("touchend", windowTouchMoveHandler);
 
-               console.log(direction);
 
                // координаты относительно начала страницы с учетом высоты блока
                var topElement = $('#baby3-slider').offset().top;
@@ -183,6 +180,8 @@
         // после срабатывания события отключаем обработчики
         window.removeEventListener('keydown', windowKeyDownWheelHandler);
         window.removeEventListener('wheel', windowKeyDownWheelHandler);
+
+        console.log('windowTouchMoveHandler');
 
         // текущий слайд
         var $current = $sections.filter('.active');
