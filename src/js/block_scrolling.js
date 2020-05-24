@@ -313,7 +313,6 @@
         setTimeout(function () {
             if(!isEventResize){
                 if(device.type === 'desktop'){
-                    console.log(device.type);
                     enableScrollingPC();
                 }else if(device.type === 'mobile' || device.type === 'tablet'){
                     enableScrollingMobile();
