@@ -21,18 +21,26 @@
     <script>
        window.addEventListener('load', function () {
             var preloader = document.querySelector('#preloader');
+            var heartsLittle = preloader.querySelector('.preloader__heart-wrap');
             var heartBig = preloader.querySelector('.preloader__heart--big');
+
+
+           setTimeout(function () {
+               heartsLittle.classList.add('hide');
+           }, 2000);
+
            setTimeout(function () {
                heartBig.classList.add('active');
-           }, 0);
+           }, 1750);
 
            setTimeout(function () {
                heartBig.classList.add('opacity');
-           }, 1500);
+           }, 1760);
 
-            setTimeout(function () {
+
+           setTimeout(function () {
                 document.body.removeChild(preloader);
-            }, 1900);
+            }, 4500);
         });
     </script>
 
