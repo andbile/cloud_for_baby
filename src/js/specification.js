@@ -50,10 +50,10 @@
 
         // инициализируем первые внутренние слайды (показ фото)
         // с задержкой из-за глюков
-        disableSliders($slickSliders_specPhotos);
-        setTimeout(function () {
+       /* disableSliders($slickSliders_specPhotos);
+        setTimeout(function () {*/
             enableSlider($slickSliders_specPhotos);
-        }, 400);
+       /* }, 400);*/
     }
 
     function enableSlider($slideNode) {
@@ -157,7 +157,7 @@
 
         setTimeout(function () {
             enableSlider($slickSliders_specPhotos);
-        }, 200);
+        }, 100);
 
     }
 

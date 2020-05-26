@@ -115,11 +115,13 @@
 }
 
 .slide-specifications__photo-preview-items{
-  display: flex;
-  justify-content: space-between;
+  //display: flex;
+  //justify-content: space-between;
   z-index: 2;
+
   .slide-item--preview-img{
     height: 106px;
+    width: 30%;
     text-align: center;
     cursor: pointer;
     transition: opacity 0.4s;
