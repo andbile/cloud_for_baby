@@ -22,8 +22,8 @@
         timerId = setTimeout(function() {
             disableSliders($slickSliders_specPhotos);
             enableSlider($slickSliders_specPhotos);
-           // mainRangeSlider();
-            }, 300);
+
+            }, 400);
     });
 
 
@@ -53,7 +53,7 @@
         disableSliders($slickSliders_specPhotos);
         setTimeout(function () {
             enableSlider($slickSliders_specPhotos);
-        }, 200);
+        }, 400);
     }
 
     function enableSlider($slideNode) {

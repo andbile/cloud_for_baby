@@ -181,7 +181,6 @@
         window.removeEventListener('keydown', windowKeyDownWheelHandler);
         window.removeEventListener('wheel', windowKeyDownWheelHandler);
 
-        console.log('windowTouchMoveHandler');
 
         // текущий слайд
         var $current = $sections.filter('.active');

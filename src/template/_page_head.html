@@ -21,26 +21,29 @@
     <script>
        window.addEventListener('load', function () {
             var preloader = document.querySelector('#preloader');
+
+            if(!preloader) return;
+
             var heartsLittle = preloader.querySelector('.preloader__heart-wrap');
             var heartBig = preloader.querySelector('.preloader__heart--big');
 
 
            setTimeout(function () {
                heartsLittle.classList.add('hide');
-           }, 2000);
+           }, 1500);
 
            setTimeout(function () {
                heartBig.classList.add('active');
-           }, 1750);
+           }, 1550);
 
            setTimeout(function () {
                heartBig.classList.add('opacity');
-           }, 1760);
+           }, 3000);
 
 
            setTimeout(function () {
                 document.body.removeChild(preloader);
-            }, 4500);
+            }, 3100);
         });
     </script>
 
