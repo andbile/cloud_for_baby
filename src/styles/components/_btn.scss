@@ -150,6 +150,13 @@
   text-align: center;
 }
 
+
+.btn-type4{
+  padding: 7px 28px;
+  padding-top: 11px;
+  text-transform: uppercase;
+}
+
 @media (max-width: 576px){
   .btn{
     padding: 10px 15px;
@@ -161,6 +168,9 @@
 
 
 }
+
+
+
 
 // кнопки для слайдеров, которые на весь экран
 .slider-btn--full-slider{

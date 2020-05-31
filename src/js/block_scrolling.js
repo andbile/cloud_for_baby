@@ -57,7 +57,6 @@
     var touchendPositionY = 0;
     function windowTouchMoveHandler(evt) {
 
-        console.log('windowTouchMoveHandler');
 
         if(evt.type === 'touchstart'){
             touchstartPositionY = evt.touches[0].screenY;
