@@ -1,3 +1,10 @@
+@media (max-width: 1024px){
+  .specifications__tab-goods-items,
+  .specifications__tab-goods-items.active{
+    height: auto;
+  }
+}
+
 @media (max-width: 992px){
   .specifications__nav{
     flex-wrap: wrap;

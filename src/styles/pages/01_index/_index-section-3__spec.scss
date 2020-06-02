@@ -79,12 +79,26 @@
   display: none;
   flex-wrap: wrap;
   justify-content: center;
+
+  height: 560px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar-thumb{
+    height: 200px;
+    border-radius: 3px;
+    background-color: #7fc5b6;
+  }
+
+  &::-webkit-scrollbar{
+    width:6px;
+  }
+
+
 }
 
 .specifications__tab-goods-items.active{
   display: flex;
 }
-
 
 .specifications__goods-item{
   flex: none;
@@ -92,6 +106,7 @@
   margin-bottom: 20px;
   max-width: 300px;
   padding: 20px;
+  max-height: 500px;
 
   background-color: #ebebeb;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
