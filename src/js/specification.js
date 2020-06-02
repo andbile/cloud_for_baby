@@ -5,13 +5,21 @@
         callbacks: {
             open: function() {
                 enableSlider($(this)[0].content);
+                if(device.type === 'desktop'){
+                    disableScroll();
+                }
+
             },
 
             close: function() {
                 disableSliders($(this)[0].content);
+                if(device.type === 'desktop'){
+                    enableScroll();
+                }
             }
         }
     });
+
 
 
     // включаем слайдер
