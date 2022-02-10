@@ -34,7 +34,7 @@
     "gulp.spritesmith": "^6.11.0",
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "minimist": ">=0.2.1"
   },
   "dependencies": {
