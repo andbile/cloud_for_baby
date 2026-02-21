@@ -1,25 +1,16 @@
 'use strict';
 const gulp = require ('gulp'),
-    eslint = require('gulp-eslint'),
     uglify = require('gulp-uglify'),
-
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass')),
     cssnano = require('gulp-cssnano'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
-
-    pngSprite = require('gulp.spritesmith'),
     gulpSvgSprite = require('gulp-svg-sprite'),
-    imagemin = require('gulp-imagemin'),
-    imageminPngquant = require('imagemin-pngquant'),
-    imageminJpegRecompress = require('imagemin-jpeg-recompress'),
-
     fileInclude = require('gulp-file-include'),
     sourcemaps = require('gulp-sourcemaps'),
     bs = require('browser-sync').create(),
     del = require('del'),
     changed = require('gulp-changed');
-   /* cache = require('gulp-cache');*/
 
 
 const path = {
@@ -88,8 +79,6 @@ gulp.task('scripts', function () {
             basepath: '@file'
         }))
         .pipe(sourcemaps.init())
-        .pipe(eslint())
-        .pipe(eslint.format())// вывод ошибок
         /*.pipe(eslint.failAfterError())*/
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
@@ -118,17 +107,17 @@ gulp.task('copyImg', function () {
 
         .pipe(changed(newPathImg + '', {hasChanged: changed.compareLastModifiedTime}))
 
-        .pipe(imagemin([
+ /*       .pipe(imagemin([
             imagemin.gifsicle({interlaced: true}),
             imagemin.mozjpeg({quality: 75, progressive: true}),
-          /*  imagemin.optipng({optimizationLevel: 5, bitDepthReduction: true}),*/
+          /!*  imagemin.optipng({optimizationLevel: 5, bitDepthReduction: true}),*!/
             imagemin.svgo({
                 plugins: [
                     {removeViewBox: false},
                     {cleanupIDs: false}
                 ]
             })
-        ]))
+        ]))*/
 
 
         .pipe(gulp.dest(function(file){
@@ -185,9 +174,9 @@ function getSvgSprite(callback) {
     callback();
 }
 
-function getPngSprite(callback){
+/*function getPngSprite(callback){
     let spriteData =
-        gulp.src('./src/img/sprite_png/*.*') // путь, откуда берём картинки для спрайта
+        gulp.src('./src/img/sprite_png/!*.*') // путь, откуда берём картинки для спрайта
         .pipe(pngSprite({
             imgName: 'sprite.png',
             cssName: '_sprite.scss',
@@ -200,7 +189,7 @@ function getPngSprite(callback){
     spriteData.css.pipe(gulp.dest('./src/styles/')); // путь, куда сохраняем стили
 
     callback();
-}
+}*/
 
 
 function browserSync(){
@@ -229,5 +218,5 @@ function watch(){
 exports.default = gulp.series('clean', gulp.parallel('html', 'styles', 'scripts', 'copyFiles', 'copyImg'), gulp.parallel(watch, browserSync));
 
 exports.spriteSvg = gulp.parallel(getSvgSprite);
-exports.spritePng = gulp.parallel(getPngSprite);
+//exports.spritePng = gulp.parallel(getPngSprite);
 
